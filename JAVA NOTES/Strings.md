@@ -1,0 +1,165 @@
+A string is a Sequence of characters used to store texts.
+
+`String name = "Rishu";`
+Strings are immutable and cannot be changed .
+Java.lang.String class is used to create a string object .
+The String is a class but can be used as a data type.
+
+# Ways to Create a String
+
+## 1️⃣ Using String Literal 
+
+String str = "Hello";
+- Stored in **String pool**
+- Saves memory
+- Recommended method
+
+String str1 ="harry"
+String str2 = "harry"
+ Harry is already present in the string pool , pointed by str1. When we try to create the same string object using str2 , JVM finds that string object with the value "harry " is already present so instead of creating a new object , a reference to the same object is returned. 
+
+---
+## 2️⃣ Using new Keyword
+
+String str = new String("Hello");
+- Stored in **heap memory**
+- Creates new object every time
+When we create a string using "new" keyword , a new object is always created in the heap memory.
+Str1->Harry
+str2->Harry
+harry still 2 different objects are created and they referred to 2 different reference variable i. e str1 and str2.
+
+# Important String Methods and Definitions
+
+**1️⃣ length()**  
+Returns the **number of characters** present in the string.
+
+**2️⃣ charAt(int index)**  
+Returns the **character** at the specified index position.
+
+**3️⃣ toUpperCase()**  
+Converts all characters of the string into **uppercase** letters.
+
+**4️⃣ toLowerCase()**  
+Converts all characters of the string into **lowercase** letters.
+
+**5️⃣ equals(String anotherString)**  
+Compares two strings and returns **true if both strings have the same content**.
+
+**6️⃣ equalsIgnoreCase(String anotherString)**  
+Compares two strings **ignoring case differences**.
+
+**7️⃣ concat(String str)**  
+Joins one string to the **end of another string**.
+
+**8️⃣ substring(int beginIndex)**  
+Returns a **portion of the string** starting from the specified index.
+
+**9️⃣ substring(int beginIndex, int endIndex)**  
+Returns a **portion of the string** between the specified beginning and ending indexes.
+
+**🔟 contains(CharSequence s)**  
+Checks whether the string **contains the specified sequence of characters**.
+
+**1️⃣1️⃣ replace(char oldChar, char newChar)**  
+Replaces all occurrences of a **specified character** with a new character.
+
+**1️⃣2️⃣ trim()**  
+Removes **leading and trailing spaces** from the string.
+
+**1️⃣3️⃣ isEmpty()**  
+Checks whether the string is **empty (length is zero)**.
+
+**1️⃣4️⃣ indexOf(String str)**  
+Returns the **index of the first occurrence** of the specified substring.
+
+**1️⃣5️⃣ lastIndexOf(String str)**  
+Returns the **index of the last occurrence** of the specified substring.
+
+**1️⃣6️⃣ startsWith(String prefix)**  
+Checks whether the string **begins with the specified prefix**.
+
+**1️⃣7️⃣ endsWith(String suffix)**  
+Checks whether the string **ends with the specified suffix**.
+
+**1️⃣8️⃣ compareTo(String anotherString)**  
+Compares two strings **lexicographically** (based on dictionary order).
+
+**1️⃣9️⃣ valueOf(dataType value)**  
+Converts different data types into their **string representation**.
+
+**2️⃣0️⃣ split(String regex)**  
+Splits the string into an **array of substrings** based on a given pattern.
+
+
+#### String vs String Buffer vs String Builder
+
+**StringBuilder:**  
+**StringBuilder** is a **mutable class in Java used to create and modify strings without creating new objects, mainly used in single-threaded programs.**
+
+**StringBuffer:**  
+**StringBuffer** is a **mutable and thread-safe class in Java used to create and modify strings safely in multi-threaded programs.**
+###### Difference Between String, StringBuilder, and StringBuffer
+
+| Feature         | String             | StringBuilder        | StringBuffer         |
+| --------------- | ------------------ | -------------------- | -------------------- |
+| Mutability      | Immutable          | Mutable              | Mutable              |
+| Speed           | Slow               | Fast                 | Medium               |
+| Thread-Safe     | Yes                | No                   | Yes                  |
+| Memory Usage    | More               | Less                 | Less                 |
+| Modification    | Creates new object | Modifies same object | Modifies same object |
+| Synchronization | Not needed         | No                   | Yes                  |
+**Why Do We Need StringBuffer and StringBuilder?**
+
+Ans. We need **StringBuffer** and **StringBuilder** because **String objects are immutable** (cannot be changed).  
+When we modify a String many times, it creates **many new objects**, which wastes **memory and time**.
+**StringBuffer** and **StringBuilder** solve this problem because they are **mutable** (can change without creating new objects).
+
+# Common Methods of StringBuffer and StringBuilder
+
+**1️⃣ append()**  
+Adds data to the **end** of the string.
+
+**2️⃣ insert()**  
+Inserts data at a **specified position** in the string.
+
+**3️⃣ replace()**  
+Replaces characters between **specified indexes** with new characters.
+
+**4️⃣ delete()**  
+Removes characters between **specified indexes**.
+
+**5️⃣ deleteCharAt()**  
+Removes the character at a **specific index**.
+
+**6️⃣ reverse()**  
+Reverses the characters in the string.
+
+**7️⃣ length()**  
+Returns the **number of characters** in the string.
+
+**8️⃣ capacity()**  
+Returns the **current storage capacity** of the object.
+
+**9️⃣ ensureCapacity()**  
+Increases the **capacity** of the buffer if needed.
+
+**🔟 charAt()**  
+Returns the character at the **specified index**.
+
+**1️⃣1️⃣ setCharAt()**  
+Changes the character at a **specified index**.
+
+**1️⃣2️⃣ substring()**  
+Returns a **portion of the string**.
+
+**1️⃣3️⃣ toString()**  
+Converts the buffer content into a **String object**.
+
+**1️⃣4️⃣ indexOf()**  
+Returns the **index of first occurrence** of specified substring.
+
+**1️⃣5️⃣ lastIndexOf()**  
+Returns the **index of last occurrence** of specified substring.
+
+
