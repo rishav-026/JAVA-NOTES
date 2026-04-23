@@ -1,4 +1,4 @@
-SUPER , THIS , CONSTRUCTOR , FINAL , STATIC , Garbage Collection ,Dynamic method dispatch , Object classes ,var keyword , Wrapper class ,  Call by value and Call by Reference.
+SUPER , THIS , CONSTRUCTOR , FINAL , STATIC , Garbage Collection ,Dynamic method dispatch , Object classes ,var keyword , Wrapper class ,  Call by value and Call by Reference , Inner Class and Packages.
 
 ### Super Keyword:
 The **`super` keyword** is used to **refer to the refer to the parent class** of a subclass.
@@ -630,3 +630,177 @@ public class Main {
 ```
 
 Note: Call by Reference is not in java .
+
+
+## Java Inner Classes
+
+In Java, it is also possible to nest classes (a class within a class). The purpose of nested classes is to group classes that belong together, which makes your code more readable and maintainable.
+
+To access the inner class, create an object of the outer class, and then create an object of the inner class:
+Example:
+```java
+class OuterClass {
+  int x = 10;
+
+  class InnerClass {
+    int y = 5;
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    OuterClass myOuter = new OuterClass();
+    OuterClass.InnerClass myInner = myOuter.new InnerClass();
+    System.out.println(myInner.y + myOuter.x);// Outputs 15 (5 + 10)
+  }
+}
+```
+
+## Static Inner Class
+
+An inner class can also be `static`, which means that you can access it without creating an object of the outer class:
+### Example
+```java
+class OuterClass {
+  int x = 10;
+
+  static class InnerClass {
+    int y = 5;
+  }
+}
+public class Main {
+  public static void main(String[] args) {
+    OuterClass.InnerClass myInner = new OuterClass.InnerClass();
+    System.out.println(myInner.y);// Outputs 5
+  }
+}
+```
+
+# Java Packages
+A **package** in Java is a **namespace** used to group related classes and interfaces together.
+Think of it as **a folder in a file directory**. We use packages to avoid name conflicts, and to write a better maintainable code. Packages are divided into two categories:
+- Built-in Packages (packages from the Java API)
+- User-defined Packages (create your own packages)
+
+### 1. Built-in Packages (Java API)
+Java provides many ready-made packages:
+- `java.lang` → core classes (String, Math, etc.)
+- `java.util` → utilities (ArrayList, Scanner, etc.)
+- `java.io` → input/output classes
+  ```java
+  import java.util.Scanner;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+    }
+}
+  ```
+
+### 2. User-defined Packages
+You can create your own package using the `package` keyword.
+
+Example :
+schoolapp
+│
+├── model        → data classes (Student)
+├── service      → business logic (StudentService)
+└── main         → execution (Main class)
+
+```java
+//Student.java
+package model;
+public class Student {
+    private int id;
+    private String name;
+    private int marks;
+    public Student(int id, String name, int marks) {
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+    public int getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+    public int getMarks() {
+        return marks;
+    }
+    public void display() {
+        System.out.println(id + " - " + name + " - " + marks);
+    }
+}
+```
+```java
+//StudentService.java
+package service;
+import model.Student;
+import java.util.ArrayList;
+public class StudentService {
+    private ArrayList<Student> students = new ArrayList<>();
+    // Add student
+    public void addStudent(Student s) {
+        students.add(s);
+    }
+    // Display all students
+    public void showAll() {
+        for (Student s : students) {
+            s.display();
+        }
+    }
+    // Get topper student
+    public Student getTopper() {
+        Student top = students.get(0);
+        for (Student s : students) {
+            if (s.getMarks() > top.getMarks()) {
+                top = s;
+            }
+        }
+        return top;
+    }
+}
+```
+```java
+//main.java
+package main;
+import model.Student;
+import service.StudentService;
+public class Main {
+    public static void main(String[] args) {
+        StudentService service = new StudentService();
+        // Adding students
+        service.addStudent(new Student(1, "Ravi", 85));
+        service.addStudent(new Student(2, "Amit", 92));
+        service.addStudent(new Student(3, "Neha", 78));
+        System.out.println("📋 All Students:");
+        service.showAll();
+        System.out.println("\n🏆 Topper Student:");
+        Student top = service.getTopper();
+        top.display();
+    }
+}
+Output:All Students:
+1 - Ravi - 85
+2 - Amit - 92
+3 - Neha - 78
+
+Topper Student:
+2 - Amit - 92
+```
+when we compiled , our project should look like :
+schoolapp/
+├── model/
+│     └── Student.java
+│     └── Student.class
+│
+├── service/
+│     └── StudentService.java
+│     └── StudentService.class
+│
+├── main/
+│     └── Main.java
+│     └── Main.class
+This project demonstrates Java packages using a simple Student Management System. It is divided into three packages: **model** (stores the `Student` class with data like id, name, and marks), **service** (contains `StudentService` which handles logic like adding students and finding the topper), and **main** (contains the `Main` class which runs the program). This structure shows how packages help organize code into separate layers, making it clean, modular, and easier to maintain.
+

@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "26202f0efd4d018e",
+            "id": "f0f6c19c776da831",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JAVA NOTES/Important Keywords in JAVA and Exception Handling....md",
+                "file": "JAVA NOTES/Collection Framework.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Important Keywords in JAVA and Exception Handling..."
+              "title": "Collection Framework"
             }
           }
         ]
@@ -183,10 +183,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "26202f0efd4d018e",
+  "active": "f0f6c19c776da831",
   "lastOpenFiles": [
+    "JAVA NOTES/Exception handling and Multithreading.md",
+    "JAVA NOTES/Collection Framework.md",
+    "Pasted image 20260423112941.png",
+    "JAVA NOTES/Important Keywords in JAVA.md",
+    "Pasted image 20260423110953.png",
+    "Untitled.md",
     "JAVA NOTES/OOPS.md",
-    "JAVA NOTES/Important Keywords in JAVA and Exception Handling....md",
     "JAVA NOTES/Loops and Conditions.md",
     "JAVA NOTES/Strings.md",
     "JAVA NOTES/Basic Java.md",
