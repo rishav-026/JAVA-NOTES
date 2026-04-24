@@ -1,6 +1,8 @@
 A string is a Sequence of characters used to store texts.
 
-`String name = "Rishu";`
+```java
+String name = "Rishu";
+```
 Strings are immutable and cannot be changed .
 Java.lang.String class is used to create a string object .
 The String is a class but can be used as a data type.
@@ -162,4 +164,13 @@ Returns the **index of first occurrence** of specified substring.
 **1️⃣5️⃣ lastIndexOf()**  
 Returns the **index of last occurrence** of specified substring.
 
+**Difference between String , String builder and String buffer**
 
+|Feature|String|StringBuilder|StringBuffer|
+|---|---|---|---|
+|Mutability|Immutable|Mutable|Mutable|
+|Thread-safe|Yes|No|Yes|
+|Performance|Slow (for changes)|Fastest|Slower than Builder|
+|Memory usage|More|Less|Less|
+|Synchronization|No|No|Yes|
+|Introduced in|Java 1.0|Java 1.5|Java 1.0|

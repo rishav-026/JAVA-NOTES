@@ -2,7 +2,7 @@ Exception handling lets you catch and handle errors during runtime - so your pro
 It uses different keywords:
 
 The `try` statement allows you to define a block of code to be tested for errors while it is being executed.
-The `catch` statement allows you to define a block of code to be executed, if an error occurs in the try block.
+The `catch` block defines how to handle a specific error if it occurs within the associated `try` block.
 ```java
 try {
   //  Block of code to try
@@ -25,9 +25,7 @@ System.out.println(c);
 ```
 Program crashes here.
 # Solution: Exception Handling
-
 Java uses these keywords:
-
 ##  1. try
 Code that may cause error
 
@@ -35,13 +33,14 @@ Code that may cause error
 Handles the error
 
 ##  3. finally (optional)
-Always executes
+The `finally` statement lets you execute code, after `try...catch`, regardless of the result
 
 ## 4. throw
-Manually throw exception
+The `throw` statement allows you to create a custom error.
+The `throw` statement is used together with an **exception type**. There are many exception types available in Java: `ArithmeticException`, `FileNotFoundException`, `ArrayIndexOutOfBoundsException`, `SecurityException`, etc
 
 ##  5. throws
-Declares exception in method
+The `throws` keyword is used in a **method declaration** to specify that the method may throw certain types of exceptions during its execution
 
 ##### try-catch block:
 ```java
@@ -57,7 +56,6 @@ public class Test {
         catch (ArithmeticException e) {
             System.out.println("Cannot divide by zero!");
         }
-
         System.out.println("Program continues...");
         //Cannot divide by zero!  
         //Program continues...
@@ -66,30 +64,36 @@ public class Test {
 ```
 ##### finally block:
 ```java
-try {
-    int a = 10 / 0;
-}
-catch (Exception e) {
-    System.out.println("Error occurred");
-}
-finally {
-    System.out.println("Always executed");
+public class Main {
+  public static void main(String[] args) {
+    try {
+      int[] myNumbers = {1, 2, 3};
+      System.out.println(myNumbers[10]);
+    } catch (Exception e) {
+      System.out.println("Something went wrong.");
+    } finally {
+      System.out.println("The 'try catch' is finished.");
+    }
+  }
 }
 ```
 ##### throw keyword:
 ```java
-public class Test {
-    static void checkAge(int age) {
-        if (age < 18) {
-            throw new ArithmeticException("Not eligible");
-        } else {
-            System.out.println("Eligible");
-        }
+public class Main {
+  static void checkAge(int age) {
+    if (age < 18) {
+      throw new ArithmeticException("Access denied - You must be at least 18 years old.");
     }
-    public static void main(String[] args) {
-        checkAge(15);
+    else {
+      System.out.println("Access granted - You are old enough!");
     }
+  }
+
+  public static void main(String[] args) {
+    checkAge(15); // Set age to 15 (which is below 18...)
+  }
 }
+//output: Exception in thread "main" java.lang.ArithmeticException: Access denied - You must be at least 18 years old
 ```
 ##### throws keyword:
 ```java
@@ -97,7 +101,6 @@ public class Test {
     static void show() throws Exception {
         throw new Exception("Error occurred");
     }
-
     public static void main(String[] args) {
         try {
             show();
@@ -214,8 +217,9 @@ public class Test {
 #### Custom Exceptions in Java
 
 A **custom exception** is an exception that you **create yourself** in Java to handle specific business rules or application-specific errors.
+
 There are **2 types**:
-1️⃣ Checked Custom Exception (extends Exception)
+**1️⃣ Checked Custom Exception (extends Exception)**
 Example:
 ```java
 class InvalidAgeException extends Exception {
@@ -243,7 +247,7 @@ public class Test {
 }
 ```
 
-2️⃣ Unchecked Custom Exception (extends RuntimeException)
+**2️⃣ Unchecked Custom Exception (extends RuntimeException)**
 
 Example:
 ```java
@@ -480,23 +484,19 @@ class DemoSleep {
 A thread in Java goes through different **states** during its execution.
 #### Main Thread States
 
-##### 1. 🆕 NEW
+##### 1.  NEW
 - Thread is created but not started yet.
 - Example:
-
 Thread t = new Thread();
 
 ---
-##### 2. ▶️ RUNNABLE
-
+##### 2.  RUNNABLE
 - Thread is ready to run.
 - After calling `start()`, it enters this state.
-
 t.start();
 
 ---
 ##### 3.  RUNNING
-
 - Thread is actually executing.
 - CPU is allocated to this thread.
 ---
