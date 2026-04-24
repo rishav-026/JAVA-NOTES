@@ -1,4 +1,4 @@
-![[Pasted image 20260423112941.png]]
+![image](https://github.com/rishav-026/JAVA-NOTES/blob/main/Pasted%20image%2020260423112941.png)
 
 -The **Java Collection Framework (JCF)** is a set of **classes and interfaces** used to store and manipulate groups of objects efficiently.
 - Operations performed : Insertion , Deletion , Sorting , Searching

@@ -517,4 +517,4 @@ t.join();             // WAITING
 - Thread has finished execution.
 - Cannot be restarted.
 
-![[Pasted image 20260423110953.png]]
+![image](https://github.com/rishav-026/JAVA-NOTES/blob/main/Pasted%20image%2020260423110953.png)
