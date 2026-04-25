@@ -9,12 +9,12 @@ It is used for:
 - Database connection
 - And much, much more!
 
-# Working of Java Program:
+## Working of Java Program:
 Source code --Compiled by Javac-->>Byte Code --Interpreted by JVM-->> Machine Code
 
 JVM (Java Virtual Machine):JVM is the engine that runs Java programs.
 It **converts Java code into machine code** so your computer understands it.
-### What JVM does:
+## What JVM does:
 - Runs compiled Java code (.class files)
 - Converts bytecode → machine code
 - Manages memory
@@ -31,7 +31,7 @@ It contains:
 - Compiler (javac)
 - Development tools
 
-# Basic Structure of Java
+## Basic Structure of Java
 
 ```java
 java.util.Scanner;
@@ -54,7 +54,7 @@ Here's what each part means :
 
 Finally, remember that each Java statement must end with a semicolon (`;`).
 
-## Java Type Casting
+### Java Type Casting
 Type casting means converting one data type into another. For example, turning an `int` into a `double`.
 In Java, there are two main types of casting:
 
@@ -64,7 +64,7 @@ In Java, there are two main types of casting:
     
 - **Narrowing Casting** (manual) - converting a larger type to a smaller type size  
     `double` -> `float` -> `long` -> `int` -> `char` -> `short` -> `byte`
-## Widening Casting
+### Widening Casting
 
 Widening casting is done automatically when passing a smaller size type into a larger size type.
 ```java
@@ -74,7 +74,7 @@ double myDouble = myInt; // Automatic casting: int to double
 System.out.println(myInt);    // Outputs 9
 System.out.println(myDouble);
 ```
-## Narrowing Casting
+### Narrowing Casting
 
 Narrowing casting must be done manually by placing the type in parentheses `()` in front of the value.
 ```java
@@ -88,7 +88,6 @@ System.out.println(myInt);
 ## Java Operators
 
 **Operators** are symbols used to **perform operations on variables and values**
-
 Java operators are mainly divided into:
 1. Arithmetic Operators
 2. Relational (Comparison) Operators
@@ -98,7 +97,7 @@ Java operators are mainly divided into:
 6. Increment and Decrement Operators
 7. Conditional (Ternary) Operator
 8. Bitwise Operators
-# 1️⃣ Arithmetic Operators
+### 1️. Arithmetic Operators
 
 Used to perform **mathematical calculations**.
 
@@ -111,15 +110,14 @@ Used to perform **mathematical calculations**.
 |`%`|Modulus (remainder)|`a % b`|
 
 ### Example:
-
+```java
 int a = 10, b = 5;  
 System.out.println(a + b); // 15  
 System.out.println(a % b); // 0
 
+```
 ---
-
-# 2️⃣ Relational (Comparison) Operators
-
+# 2️. Relational (Comparison) Operators
 Used to **compare two values**.  
 Result is always **true** or **false**.
 
@@ -133,15 +131,14 @@ Result is always **true** or **false**.
 |`<=`|Less than or equal to|
 
 ### Example:
-
+```java
 int a = 10, b = 20;  
 System.out.println(a > b); // false  
 System.out.println(a == b); // false
+```
 
 ---
-
-# 3️⃣ Logical Operators
-
+### 3️. Logical Operators
 Used to **combine conditions**.
 
 |Operator|Meaning|
@@ -151,15 +148,14 @@ Used to **combine conditions**.
 |`!`|Logical NOT|
 
 ### Example:
-
+```java
 int a = 10;  
 System.out.println(a > 5 && a < 20); // true  
 System.out.println(!(a > 5)); // false
+```
 
 ---
-
-# 4️⃣ Assignment Operators
-
+### 4️. Assignment Operators
 Used to **assign values** to variables.
 
 |Operator|Meaning|Example|
@@ -169,16 +165,14 @@ Used to **assign values** to variables.
 |`-=`|Subtract and assign|`a -= 5`|
 |`*=`|Multiply and assign|`a *= 5`|
 |`/=`|Divide and assign|`a /= 5`|
-
 ### Example:
-
+```java
 int a = 10;  
 a += 5; // a = a + 5
+```
 
 ---
-
-# 5️⃣ Unary Operators
-
+### 5️. Unary Operators
 Operate on **single operand**.
 
 |Operator|Meaning|
@@ -186,59 +180,43 @@ Operate on **single operand**.
 |`+`|Unary plus|
 |`-`|Unary minus|
 |`!`|Logical NOT|
-
 ### Example:
-
+```java
 int a = 5;  
 System.out.println(-a); // -5
-
+```
 ---
 
-# 6️⃣ Increment and Decrement Operators
-
+### 6️. Increment and Decrement Operators
 Used to **increase or decrease value by 1**.
 
 |Operator|Meaning|
 |---|---|
 |`++`|Increment|
 |`--`|Decrement|
-
 ### Types:
-
-**Pre-Increment**
-
-++a;
-
-**Post-Increment**
-
-a++;
-
+**Pre-Increment**      ++a;
+**Post-Increment**     a++;
 ### Example:
-
+```java
 int a = 5;  
-  
 a++; // a becomes 6
+```
 
 ---
-
-# 7️⃣ Conditional (Ternary) Operator
-
+### 7️. Conditional (Ternary) Operator
 Used as **shortcut for if-else**.
 
 ### Syntax:
-
 condition ? value1 : value2;
-
 ### Example:
-
+```java
 int a = 10, b = 20;  
-  
 int max = (a > b) ? a : b;
 
+```
 ---
-
-# 8️⃣ Bitwise Operators (Basic Idea)
-
+### 8️. Bitwise Operators (Basic Idea)
 Used to perform **bit-level operations**.
 
 |Operator|Meaning|
@@ -247,7 +225,7 @@ Used to perform **bit-level operations**.
 |`|`|
 |`^`|Bitwise XOR|
 |`~`|Bitwise NOT|
-# Operator Precedence (Important Short Note)
+## Operator Precedence (Important Short Note)
 
 Order of execution:
 
@@ -259,21 +237,17 @@ Order of execution:
 6. Logical
 7. Assignment
 
-### Data Types in Java
-
+## Data Types in Java
 **Data Types** define the **type of data** a variable can store.
 
-# Types of Data Types in Java
-
+### Types of Data Types in Java
 Java data types are divided into:
 
-1️⃣ Primitive Data Types  
-2️⃣ Non-Primitive Data Types
+1️.Primitive Data Types  
+2️. Non-Primitive Data Types
 
-# Primitive Data Types
-
+### Primitive Data Types
 Primitive data types store **simple values**.
-
 There are **8 primitive data types** in Java.
 
 |Data Type|Size|Description|Example|
@@ -287,41 +261,34 @@ There are **8 primitive data types** in Java.
 |char|2 bytes|Single character|`char c = 'A';`|
 |boolean|1 bit|True/False|`boolean b = true;`|
 
-# 2️⃣ Non-Primitive Data Types
-
+### 2️. Non-Primitive Data Types
 Non-primitive data types store **complex data**.
 
 They are **created by the programmer**.
-
 ### Examples:
-
 - String
 - Array
 - Class
 - Object
 - Interface
-
-
 ## What is a Variable?
-
 A **variable** is a **named memory location** used to store data.
-# Types of Variables in Java
-
+### Types of Variables in Java
 Java variables are divided into **3 types**:
 
-1️⃣ Local Variables  
-2️⃣ Instance Variables  
-3️⃣ Static Variables
+1️. Local Variables  
+2️. Instance Variables  
+3️. Static Variables
 
-## 1.Local Variables
+#### 1.Local Variables
 - Declared **inside a method**
 - Used **only within that method**
 - Must be initialized before use
-## 2.Instance Variables
+#### 2.Instance Variables
 - Declared **inside class but outside method**
 - Each object gets its own copy
 - Also called **non-static variables**
-## 3.Static Variables
+#### 3.Static Variables
 - Declared using **static keyword**
 - Shared among all objects
 - Only one copy exists

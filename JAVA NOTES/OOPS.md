@@ -11,7 +11,7 @@ Procedural programming is about writing procedures or methods that perform opera
 
 ---
 
-# 🔹 Types of Access Modifiers in Java
+#  Types of Access Modifiers in Java
 
 There are **4 types of access modifiers**:
 
@@ -30,15 +30,14 @@ There are **4 types of access modifiers**:
 
 # Methods (Functions) in Java 
 A **method** is a **block of code** that performs a **specific task** and runs when it is called.
-# 🔹 Syntax
-
+###  Syntax
 ```java
 returnType methodName(parameters) {  
     // statements  
 }
 ```
 ---
-# 🔹 Parts of a Method
+#  Parts of a Method
 
 - **Return Type** → Type of value returned
 - **Method Name** → Name of the method
@@ -47,18 +46,18 @@ returnType methodName(parameters) {
 - **Return Statement** → Sends value back
 
 ---
-# 🔹 Types of Methods
+#  Types of Methods
 
-1️⃣ **Predefined Methods**  (Also known as built in methods)
+##### 1️. **Predefined Methods**  (Also known as built in methods)
 Methods already available in Java libraries. 
 ex: System.out.println( ) , String.length( ) , Math.max( ) , Math.sqrt( ) , Arrays.sort(array) etc.
 
-2️⃣ **User-defined Methods**  
+##### 2️. **User-defined Methods**  
 Methods created by the programmer.
 
 # Java Classes and Objects
 
-## Create a Class
+#### Create a Class
 - A class is a blueprint used to create objects that share common properties and behavior.
 - Classes is a blueprint which defines some properties and behaviours .
 
@@ -69,7 +68,7 @@ public class Main {
 }
 ```
 
-## Create an Object
+#### Create an Object
 - An object is an instance of a class. It represents a specific entity created from the class template.
 
 In Java, an object is created from a class. After defining a class, you can create objects from it using the `new` keyword:
@@ -85,7 +84,7 @@ public class Main {
 ```
 
 Example : The animal type dog is a class while a particular dog named Tommy is an object of the dog class
-## Multiple Objects
+### Multiple Objects
 
 You can create multiple objects of one class:
 ```java
@@ -157,13 +156,13 @@ class Dog extends Animal {
 ```
 
 OOPs mainly includes **four core concepts**:
-1️⃣ **Encapsulation**  
-2️⃣ **Inheritance**  
-3️⃣ **Polymorphism**  
-4️⃣ **Abstraction**
+1️. **Encapsulation**  
+2️. **Inheritance**  
+3️. **Polymorphism**  
+4️. **Abstraction**
 These are called the **four pillars of OOPs**.
 
-# 1️⃣ Encapsulation
+# 1️. Encapsulation
 **Definition:**  
 Encapsulation is the **wrapping of data and methods into a single unit (class)**.
 
@@ -171,8 +170,7 @@ Encapsulation is the **wrapping of data and methods into a single unit (class)**
 Data is **hidden** using **private variables** and accessed using **getter and setter methods**.
 
 ---
-# 🔹 2️⃣ Inheritance
-
+#  2️. Inheritance
 **Definition:**  
 Inheritance is the **process of creating a new class from an existing class**.
 
@@ -180,7 +178,7 @@ Inheritance is the **process of creating a new class from an existing class**.
 Helps in **code reuse**.
 
 ---
-# 🔹 3️⃣ Polymorphism
+#  3️. Polymorphism
 
 **Definition:**  
 **Polymorphism** means **"many forms"**.
@@ -190,7 +188,7 @@ In Java, **polymorphism** allows **one method or object to behave in different w
 - Method Overriding (**Runtime polymorphism**)
 
 ---
-# 🔹 4️⃣ Abstraction
+#  4. Abstraction
 
 **Definition:**  
 Abstraction is the **process of hiding implementation details and showing only essential features**.
@@ -203,10 +201,10 @@ Achieved using **abstract classes** and **interfaces**.
 
 Besides the four pillars, these are also important:
 
-5️⃣ **Class**  
-6️⃣ **Object**  
-7️⃣ **Constructor**  
-8️⃣ **Method**
+5️. **Class**  
+6️. **Object**  
+7️. **Constructor**  
+8️. **Method**
 
 Example of Encapsulation:
 class Student {
@@ -237,7 +235,7 @@ class Circle extends Shape {
 
 ### Inheritence:
 **Inheritance** is the process in which **one class acquires the properties , behaviours and methods of another class**.
-# Purpose of Inheritance
+##### Purpose of Inheritance
 
 - Code **reusability**
 - Reduces code duplication
@@ -267,12 +265,9 @@ class Dog extends Animal {
     }
 }
 ```
-
-# Types of Inheritance in Java
-
+### Types of Inheritance in Java
 There are **5 types**:
-
-1️⃣ **Single Inheritance**  
+##### 1️.**Single Inheritance**  
 **Single inheritance** is when **one child class inherits from one parent class**.
 Example :
 ```java
@@ -288,8 +283,7 @@ class Dog extends Animal {
 }
 ```
 
-
-2️⃣ **Multilevel Inheritance**  
+##### 2️. **Multilevel Inheritance**  
 **Multilevel inheritance** is when **a class inherits from a class that already inherits another class**.
 Example:
 ```java
@@ -309,9 +303,7 @@ class Puppy extends Dog {
     }
 }
 ```
-
-
-3️⃣ **Hierarchical Inheritance**  
+##### 3️. **Hierarchical Inheritance**  
 **Hierarchical inheritance** is when **multiple child classes inherit from one parent class**.
 ```java
 class Animal {
@@ -331,7 +323,7 @@ class Cat extends Animal {
 }
 ```
 
-4️⃣ **Multiple Inheritance**  
+##### 4️. **Multiple Inheritance**  
 **Multiple inheritance** is when **one class inherits properties from more than one parent class**.
 ❌ **Not supported using classes in Java**  
 ✔ Supported using **interfaces**
@@ -354,7 +346,7 @@ class C implements A, B {
 }
 ```
 
-5️⃣ **Hybrid Inheritance**  
+##### 5️. **Hybrid Inheritance**  
 **Hybrid inheritance** is a **combination of two or more types of inheritance** (like hierarchical + multiple).  
 ✔ Supported using **interfaces
 Example:
@@ -374,11 +366,8 @@ class C implements A, B {
     }
 }
 ```
-
-
 ### Interface in Java
 An **interface** is a **blueprint of a class** that contains **abstract methods** (methods without body).
-
 Syntax:
 ```java
 interface InterfaceName {
@@ -406,13 +395,13 @@ class Dog implements Animal {
 }
 ```
 
-#### Abstraction and `abstract` Keyword in Java
+### Abstraction and `abstract` Keyword in Java
 
 **Abstraction** is the process of **hiding implementation details** and showing **only essential features** to the user.
-## How Abstraction is Achieved
+#### How Abstraction is Achieved
 Abstraction is achieved using:
-1️⃣ **Abstract Class**  
-2️⃣ **Interface
+1️. **Abstract Class**  
+2️. **Interface
 
 The `abstract` keyword is a non-access modifier, used for classes and methods:
 
@@ -438,7 +427,7 @@ class Dog extends Animal {
     }
 }
 ```
-#### `abstract` Keyword
+##### `abstract` Keyword
 The **`abstract` keyword** is used to **declare abstract classes and abstract methods**.
 Example :
 ```java
@@ -484,7 +473,7 @@ class Main {
 }
 ```
 
-###### Multiple Interfaces:
+#### Multiple Interfaces:
 To implement multiple interfaces, separate them with a comma:
 ```java
 interface FirstInterface {

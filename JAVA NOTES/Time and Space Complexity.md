@@ -25,20 +25,19 @@ Unit to represent complexity:
 Full Order(Best-> Worst)
 O(1) < O(log n) < O(√n) < O(n) < O(n log n) < O(n²) < O(n³) < O(2ⁿ) < O(n!)
 
-# 1️⃣ **O(1) — Constant Time 
+## 1️ **O(1) — Constant Time 
 
 Execution time **does not depend on input size**.
-##  Example
+####  Example
 int x = arr[5];
-## Where Used
+#### ~~Where Used~~
 - Array index access
 - Stack push/pop
 - HashMap get() (average)
 ---
-# 2️⃣ **O(log n) — Logarithmic Time**
+## 2️ **O(log n) — Logarithmic Time**
 Input size **reduces by half** each step.
-
-##  Example
+####  Example
 ```java
 Binary Search:
 while (left <= right) {  
@@ -49,15 +48,15 @@ while(n>1){
    n=n/2;
 }
 ```
-##  Where Used
+####  Where Used
 - Binary Search
 - TreeMap operations
 - Heap operations
 ---
-# 3️⃣ **O(√n) — Square Root Time**
+## 3️ **O(√n) — Square Root Time**
 
 Operations grow with **square root of n**.
-##  Example
+####  Example
 ```java
 Finding factors of a number:
 
@@ -65,37 +64,39 @@ for (int i = 1; i * i <= n; i++) {
     System.out.println(i);  
 }
 ```
-##  Where Used
+####  Where Used
 - Prime checking
 - Factor finding
 ---
-# 4️⃣ **O(n) — Linear Time**
+## 4️ **O(n) — Linear Time**
 
 Time increases **linearly** with input size.
-##  Example
+####  Example
 ```java
 for (int i = 0; i < n; i++) {  
     System.out.println(arr[i]);  
 }
 ```
-##  Where Used
+####  Where Used
 - Traversing array
 - Linear Search
 ---
-# 5️⃣ **O(n log n) — Linearithmic Time**
+## 5️ **O(n log n) — Linearithmic Time**
 Combination of **linear + logarithmic**.
-##  Example Algorithms
+####  Example Algorithms
 - Merge Sort
 - Heap Sort
 - Quick Sort (average)
 
 Example:
+```java
 Arrays.sort(arr);
+```
 ---
-# 6️⃣ **O(n²) — Quadratic Time**
+## 6️ **O(n²) — Quadratic Time**
 Time increases with **square of input**.
 Usually caused by **nested loops**.
-## Example
+#### Example
 ```java
 for (int i = 0; i < n; i++) {  
     for (int j = 0; j < n; j++) {  
@@ -103,15 +104,15 @@ for (int i = 0; i < n; i++) {
     }  
 }
 ```
-##  Where Used
+####  Where Used
 - Bubble Sort
 - Selection Sort
 - Insertion Sort (worst)
 
 ---
-# 7️⃣ **O(n³) — Cubic Time**
+## 7️ **O(n³) — Cubic Time**
 Three nested loops.
-##  Example
+####  Example
 ```java
 for (int i = 0; i < n; i++) {  
     for (int j = 0; j < n; j++) {  
@@ -121,15 +122,15 @@ for (int i = 0; i < n; i++) {
     }  
 }
 ```
-##  Where Used
+####  Where Used
 - Matrix multiplication
 - Floyd–Warshall algorithm
 
 ---
-# 8️⃣ **O(2ⁿ) — Exponential Time**
+## 8️ **O(2ⁿ) — Exponential Time**
 Time **doubles** with every extra input.
-Very slow ⚠️
-##  Example
+Very slow 
+####  Example
 ```java
 Recursive Fibonacci:
 int fib(int n) {  
@@ -139,33 +140,33 @@ int fib(int n) {
     return fib(n - 1) + fib(n - 2);  
 }
 ```
-##  Where Used
+####  Where Used
 - Backtracking
 - Subset problems
 
 ---
-# 9️⃣ **O(n!) — Factorial Time**
+## 9️ **O(n!) — Factorial Time**
 Extremely slow — grows **factorially**.
-##  Example
+####  Example
 Generating all permutations:
 n! permutations
-##  Where Used
+####  Where Used
 - Traveling Salesman Problem
 - Permutation generation
 
 ---
-# 🔟 **O(nⁿ) — Power of n Time (Extreme Worst Case)**
+## 10 **O(nⁿ) — Power of n Time (Extreme Worst Case)**
 Worst theoretical growth.
 Very rare in real algorithms.
-##  Example Idea
-n choices at each of n steps  
+####  Example 
+#### n choices at each of n steps  
 Total possibilities = nⁿ
 
-Used in:
+#### Used in:
 - Some brute-force recursive problems
 - Highly inefficient algorithms
 
-Some Questions :
+#### Some Questions for Time Complexity:
 1.
 ```java
 for (int i = 0; i < 2*n; i++) {
@@ -282,7 +283,7 @@ for( int i=0 ; i< n ;i++){
 }
 ```
 
- Space Complexity:
+ # Some Questions for Space Complexity:
 1.
 ```java
 int a = 10;// O(1)

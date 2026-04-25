@@ -8,18 +8,15 @@ They execute different blocks of code depending on whether a condition is **true
 
 ---
 
-# 1️⃣ if Statement
-
+## 1️. if Statement
 Used to execute code **only if condition is true**.
-### Syntax:
-
+#### Syntax:
 ```java
 if(condition) {  
     // code to execute  
 }
 ```
-### Example:
-
+#### Example:
 ```java
 int age = 18;  
   
@@ -29,11 +26,9 @@ if(age >= 18) {
 ```
 
 ---
-# 2️⃣ if-else Statement
-
+### 2️. if-else Statement
 Used to execute **one block if true** and **another block if false**.
-
-### Syntax:
+#### Syntax:
 ```java
 if(condition) {  
     // true block  
@@ -42,8 +37,7 @@ else {
     // false block  
 }
 ```
-### Example:
-
+#### Example:
 ```java
 int number = 5;  
   
@@ -56,11 +50,9 @@ else {
 ```
 
 ---
-
-# 3️⃣ else-if Ladder
-
+### 3️. else-if Ladder
 Used to check **multiple conditions**.
-### Syntax:
+#### Syntax:
 ```java
 if(condition1) {  
     // code  
@@ -73,7 +65,7 @@ else {
 }
 
 ```
-### Example:
+#### Example:
 ```java
 int marks = 85;  
 if(marks >= 90) {  
@@ -88,12 +80,9 @@ else {
 ```
 
 ---
-
-# 4️⃣ switch Statement
-
+### 4️. switch Statement
 Used to select **one block from many options**.
-
-### Syntax:
+#### Syntax:
 ```java
 switch(variable) {  
     case value1:  
@@ -106,8 +95,7 @@ switch(variable) {
         // code  
 }
 ```
-
-### Example:
+#### Example:
 ```java
 int day = 2;  
   
@@ -126,28 +114,25 @@ switch(day) {
 }
 ```
 
-📌 **break** is used to stop execution.
+ **break** is used to stop execution.
 
 ---
-
 # 🔹 Looping Statements in Java
 
 ## What are Loops?
-
 **Loops** are used to **repeat a block of code multiple times**.
 
 ---
-# 1️⃣ for Loop
+### 1️. for Loop
 
 Used when the **number of iterations is known**.
-### Syntax:
+#### Syntax:
 ```java
 for(initialization; condition; update) {  
     // code  
 }
 ```
-
-### Example:
+#### Example:
 ```java
 for(int i = 1; i <= 5; i++) {  
     System.out.println(i);  1 2 3 4 5
@@ -156,19 +141,15 @@ for(int i = 1; i <= 5; i++) {
 ```
 
 ---
-
-# 2️⃣ while Loop
-
+### 2️ while Loop
 Used when the **condition is checked first**.
-### Syntax:
-
+#### Syntax:
 ```java
 while(condition) {  
     // code  
 }
 ```
-
-### Example:
+#### Example:
 ```java
 int i = 1;  
   
@@ -179,19 +160,16 @@ while(i <= 5) {
 ```
 
 ---
-# 3️⃣ do-while Loop
-
+### 3️. do-while Loop
 Executes **at least once**, even if condition is false.
-### Syntax:
-
+#### Syntax:
 ```java
 do {  
     // code  
 }  
 while(condition);
 ```
-
-### Example:
+#### Example:
 ```java
 int i = 1;  
   
@@ -203,18 +181,16 @@ while(i <= 5);
 ```
 
 ---
-
 # 🔹 Loop Control Statements
 
 Used to control loop execution.
 
 ---
-## break Statement: 
+### 1.break Statement: 
 It is used to exit the loop irrespective of whether the condition is true or false.
 
 Used to **stop loop immediately**.
-### Example:
-
+#### Example:
 ```java
 for(int i = 1; i <= 5; i++) {  
   
@@ -226,9 +202,9 @@ for(int i = 1; i <= 5; i++) {
 ```
 
 ---
-## continue Statement
+### continue Statement
 It is used to immediately move to the next iteration of the loop.
-### Example:
+#### Example:
 ```java
 for(int i = 1; i <= 5; i++) {  
   
@@ -240,7 +216,7 @@ for(int i = 1; i <= 5; i++) {
 ```
 ### return Statement
 It is used to exit from the current method.
-Example:
+#### Example:
 ```java
 public int sum(int a, int b) {
     return a + b; // Returns the result to the caller
@@ -254,15 +230,14 @@ The **for-each loop** (also called **enhanced for loop**) is used to **traverse 
 It is **simpler than a normal for loop** and mainly used when you want to **read elements one by one**.
 
 ---
-
-# 🔹 Syntax of For-Each Loop
+### 🔹 Syntax of For-Each Loop
 
 ```java
 for(dataType variable : arrayName) {  
     // code to use variable  
 }
 ```
-### Explanation:
+#### Explanation:
 - **dataType** → type of array elements
 - **variable** → temporary variable
 - **arrayName** → array to traverse

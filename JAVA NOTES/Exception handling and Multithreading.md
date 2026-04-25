@@ -26,23 +26,18 @@ System.out.println(c);
 Program crashes here.
 # Solution: Exception Handling
 Java uses these keywords:
-##  1. try
+###  1. try
 Code that may cause error
-
-##  2. catch
+###  2. catch
 Handles the error
-
-##  3. finally (optional)
+###  3. finally (optional)
 The `finally` statement lets you execute code, after `try...catch`, regardless of the result
-
-## 4. throw
+### 4. throw
 The `throw` statement allows you to create a custom error.
 The `throw` statement is used together with an **exception type**. There are many exception types available in Java: `ArithmeticException`, `FileNotFoundException`, `ArrayIndexOutOfBoundsException`, `SecurityException`, etc
-
-##  5. throws
+###  5. throws
 The `throws` keyword is used in a **method declaration** to specify that the method may throw certain types of exceptions during its execution
-
-##### try-catch block:
+#### try-catch block:
 ```java
 public class Test {
     public static void main(String[] args) {
@@ -62,7 +57,7 @@ public class Test {
     }
 }
 ```
-##### finally block:
+#### finally block:
 ```java
 public class Main {
   public static void main(String[] args) {
@@ -77,7 +72,7 @@ public class Main {
   }
 }
 ```
-##### throw keyword:
+#### throw keyword:
 ```java
 public class Main {
   static void checkAge(int age) {
@@ -95,7 +90,7 @@ public class Main {
 }
 //output: Exception in thread "main" java.lang.ArithmeticException: Access denied - You must be at least 18 years old
 ```
-##### throws keyword:
+#### throws keyword:
 ```java
 public class Test {
     static void show() throws Exception {
@@ -110,10 +105,10 @@ public class Test {
     }
 }
 ```
-#### Types of Exceptions
-##### 1. Checked Exception:
+### Types of Exceptions
+### 1. Checked Exception:
 These are exceptions that are **checked by the compiler before running the program**. You must handle them using `try-catch` or `throws`, otherwise code will not compile.
-## Common Examples:
+#### Common Examples:
 - `IOException`
 - `FileNotFoundException`
 - `SQLException`
@@ -143,9 +138,9 @@ public class Test {
 }
 ```
 
-#### 2️. Unchecked Exceptions (Runtime Exceptions)
+### 2️. Unchecked Exceptions (Runtime Exceptions)
 These exceptions occur **during program execution** and are **not checked by the compiler**.
-## Common Examples:
+#### Common Examples:
 - `ArithmeticException`
 - `NullPointerException`
 - `ArrayIndexOutOfBoundsException`
@@ -168,7 +163,7 @@ public class Test {
     }
 }
 ```
-#### Errors (Not Exceptions, but related)
+### Errors (Not Exceptions, but related)
 Errors are **serious problems that cannot be handled in most cases**.
 ##### Common Examples:
 - `StackOverflowError`
@@ -182,7 +177,7 @@ public class Test {
     }
 }
 ```
-#### Chained Exception:
+### Chained Exception:
 One exception is caused by another exception.
 
 Sometimes the **real cause of an error is hidden inside another error**.
@@ -214,12 +209,11 @@ public class Test {
     }
 }
 ```
-#### Custom Exceptions in Java
-
+### Custom Exceptions in Java
 A **custom exception** is an exception that you **create yourself** in Java to handle specific business rules or application-specific errors.
 
 There are **2 types**:
-**1️⃣ Checked Custom Exception (extends Exception)**
+##### **1️. Checked Custom Exception (extends Exception)**
 Example:
 ```java
 class InvalidAgeException extends Exception {
@@ -228,7 +222,6 @@ class InvalidAgeException extends Exception {
     }
 }
 public class Test {
-
     static void checkAge(int age) throws InvalidAgeException {
         if (age < 18) {
             throw new InvalidAgeException("Age must be 18 or above");
@@ -236,7 +229,6 @@ public class Test {
             System.out.println("Eligible to vote");
         }
     }
-
     public static void main(String[] args) {
         try {
             checkAge(15);
@@ -247,7 +239,7 @@ public class Test {
 }
 ```
 
-**2️⃣ Unchecked Custom Exception (extends RuntimeException)**
+##### **2️. Unchecked Custom Exception (extends RuntimeException)**
 
 Example:
 ```java
@@ -257,7 +249,6 @@ class InsufficientBalanceException extends RuntimeException {
     }
 }
 public class Bank {
-
     static void withdraw(int balance, int amount) {
         if (amount > balance) {
             throw new InsufficientBalanceException("Not enough balance");
@@ -265,7 +256,6 @@ public class Bank {
             System.out.println("Withdrawal successful");
         }
     }
-
     public static void main(String[] args) {
         withdraw(1000, 1500);
     }
@@ -364,21 +354,19 @@ t1.start();
 ```
 # Methods of Thread Class
 
-## (i) `start()`
+### (i) `start()`
 
 - It is used to start the execution of a thread.
 - `start()` method should be called only once for a thread.
 - Calling `start()` creates a new thread and then internally calls the `run()` method.
 
 ---
-## (ii) `run()`
+### (ii) `run()`
 
 - Each thread starts in a separate call stack.
 - Calling `run()` directly does **not** create a new thread.
 - It behaves like a normal method call.
-
-### Example:
-
+##### Example:
 ```java
 class Main extends Thread {  
     public void run() {  
@@ -392,13 +380,13 @@ class Main extends Thread {
 }
 ```
 ---
-## (iii) `isAlive()`
+### (iii) `isAlive()`
 
 - It is used to check whether a thread is alive or not.
 - Returns a boolean value:
     - `true` → thread has started and not yet finished
     - `false` → thread not started OR already finished
-### Example:
+##### Example:
 
 ```java
 class MyThread extends Thread {  
@@ -421,12 +409,11 @@ class DemoThreadMethod {
 ```
 ---
 
-## (iv) `join()`
+### (iv) `join()`
 
 - It is used to pause the execution of the current thread  
     until the thread on which `join()` is called has finished execution.
-### Example:
-
+##### Example:
 ```java
 class MyThread extends Thread {  
     public void run() {  
@@ -452,12 +439,11 @@ class DemoJoin {
 
 ```
 ---
-## (v) `sleep()`
+### (v) `sleep()`
 
 - It is used to pause execution of a thread for a specified time.
 - Time is given in milliseconds.
-### Example:
-
+##### Example:
 ```java
 class MyThread extends Thread {  
     public void run() {  
@@ -480,38 +466,40 @@ class DemoSleep {
 }
 ```
 ## Thread Lifecycle in Java
-
 A thread in Java goes through different **states** during its execution.
 #### Main Thread States
 
 ##### 1.  NEW
 - Thread is created but not started yet.
 - Example:
+```java
 Thread t = new Thread();
-
+```
 ---
 ##### 2.  RUNNABLE
 - Thread is ready to run.
 - After calling `start()`, it enters this state.
+```java
 t.start();
+```
 
 ---
 ##### 3.  RUNNING
 - Thread is actually executing.
 - CPU is allocated to this thread.
 ---
-##### 4. ⏸️ BLOCKED / WAITING / TIMED WAITING
+##### 4.  BLOCKED / WAITING / TIMED WAITING
 Thread is temporarily inactive.
-##### 🔹 BLOCKED
+##### a. BLOCKED
 - Waiting to acquire a lock.
-##### 🔹 WAITING
+##### b. WAITING
 - Waiting indefinitely (e.g., `join()`, `wait()`)
-##### 🔹 TIMED WAITING
+##### c. TIMED WAITING
 - Waiting for a specific time (`sleep(ms)`)
-
+```java
 Thread.sleep(1000);   // TIMED WAITING  
 t.join();             // WAITING
-
+```
 ---
 ##### 5. TERMINATED (DEAD)
 - Thread has finished execution.

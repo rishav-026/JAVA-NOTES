@@ -9,7 +9,7 @@ The String is a class but can be used as a data type.
 
 # Ways to Create a String
 
-## 1️⃣ Using String Literal 
+## 1️. Using String Literal 
 
 String str = "Hello";
 - Stored in **String pool**
@@ -21,7 +21,7 @@ String str2 = "harry"
  Harry is already present in the string pool , pointed by str1. When we try to create the same string object using str2 , JVM finds that string object with the value "harry " is already present so instead of creating a new object , a reference to the same object is returned. 
 
 ---
-## 2️⃣ Using new Keyword
+## 2️. Using new Keyword
 
 String str = new String("Hello");
 - Stored in **heap memory**
@@ -33,68 +33,68 @@ harry still 2 different objects are created and they referred to 2 different ref
 
 # Important String Methods and Definitions
 
-**1️⃣ length()**  
+**1️. length()**  
 Returns the **number of characters** present in the string.
 
-**2️⃣ charAt(int index)**  
+**2️.charAt(int index)**  
 Returns the **character** at the specified index position.
 
-**3️⃣ toUpperCase()**  
+**3️.toUpperCase()**  
 Converts all characters of the string into **uppercase** letters.
 
-**4️⃣ toLowerCase()**  
+**4️. toLowerCase()**  
 Converts all characters of the string into **lowercase** letters.
 
-**5️⃣ equals(String anotherString)**  
+**5️.equals(String anotherString)**  
 Compares two strings and returns **true if both strings have the same content**.
 
-**6️⃣ equalsIgnoreCase(String anotherString)**  
+**6️. equalsIgnoreCase(String anotherString)**  
 Compares two strings **ignoring case differences**.
 
-**7️⃣ concat(String str)**  
+**7️. concat(String str)**  
 Joins one string to the **end of another string**.
 
-**8️⃣ substring(int beginIndex)**  
+**8️. substring(int beginIndex)**  
 Returns a **portion of the string** starting from the specified index.
 
-**9️⃣ substring(int beginIndex, int endIndex)**  
+**9️. substring(int beginIndex, int endIndex)**  
 Returns a **portion of the string** between the specified beginning and ending indexes.
 
-**🔟 contains(CharSequence s)**  
-Checks whether the string **contains the specified sequence of characters**.
+**10. contains(CharSequence s)**  
+Checks whet.her the string **contains the specified sequence of characters**.
 
-**1️⃣1️⃣ replace(char oldChar, char newChar)**  
+**1️1. replace(char oldChar, char newChar)**  
 Replaces all occurrences of a **specified character** with a new character.
 
-**1️⃣2️⃣ trim()**  
+**1️2. trim()**  
 Removes **leading and trailing spaces** from the string.
 
-**1️⃣3️⃣ isEmpty()**  
+**1️3. isEmpty()**  
 Checks whether the string is **empty (length is zero)**.
 
-**1️⃣4️⃣ indexOf(String str)**  
+**1️4. indexOf(String str)**  
 Returns the **index of the first occurrence** of the specified substring.
 
-**1️⃣5️⃣ lastIndexOf(String str)**  
+**1️5. lastIndexOf(String str)**  
 Returns the **index of the last occurrence** of the specified substring.
 
-**1️⃣6️⃣ startsWith(String prefix)**  
+**1️6. startsWith(String prefix)**  
 Checks whether the string **begins with the specified prefix**.
 
-**1️⃣7️⃣ endsWith(String suffix)**  
+**17. endsWith(String suffix)**  
 Checks whether the string **ends with the specified suffix**.
 
-**1️⃣8️⃣ compareTo(String anotherString)**  
+**18. compareTo(String anotherString)**  
 Compares two strings **lexicographically** (based on dictionary order).
 
-**1️⃣9️⃣ valueOf(dataType value)**  
+**19. valueOf(dataType value)**  
 Converts different data types into their **string representation**.
 
-**2️⃣0️⃣ split(String regex)**  
+**2️0. split(String regex)**  
 Splits the string into an **array of substrings** based on a given pattern.
 
 
-#### String vs String Buffer vs String Builder
+### String vs String Buffer vs String Builder
 
 **StringBuilder:**  
 **StringBuilder** is a **mutable class in Java used to create and modify strings without creating new objects, mainly used in single-threaded programs.**
@@ -117,60 +117,60 @@ Ans. We need **StringBuffer** and **StringBuilder** because **String objects are
 When we modify a String many times, it creates **many new objects**, which wastes **memory and time**.
 **StringBuffer** and **StringBuilder** solve this problem because they are **mutable** (can change without creating new objects).
 
-# Common Methods of StringBuffer and StringBuilder
+## Common Methods of StringBuffer and StringBuilder
 
-**1️⃣ append()**  
+**1️. append()**  
 Adds data to the **end** of the string.
 
-**2️⃣ insert()**  
+**2️. insert()**  
 Inserts data at a **specified position** in the string.
 
-**3️⃣ replace()**  
+**3️. replace()**  
 Replaces characters between **specified indexes** with new characters.
 
-**4️⃣ delete()**  
+**4️. delete()**  
 Removes characters between **specified indexes**.
 
-**5️⃣ deleteCharAt()**  
+**5️. deleteCharAt()**  
 Removes the character at a **specific index**.
 
-**6️⃣ reverse()**  
+**6️. reverse()**  
 Reverses the characters in the string.
 
-**7️⃣ length()**  
+**7️. length()**  
 Returns the **number of characters** in the string.
 
-**8️⃣ capacity()**  
+**8️. capacity()**  
 Returns the **current storage capacity** of the object.
 
-**9️⃣ ensureCapacity()**  
+**9️. ensureCapacity()**  
 Increases the **capacity** of the buffer if needed.
 
-**🔟 charAt()**  
+**10 charAt()**  
 Returns the character at the **specified index**.
 
-**1️⃣1️⃣ setCharAt()**  
+**1️1. setCharAt()**  
 Changes the character at a **specified index**.
 
-**1️⃣2️⃣ substring()**  
+**12. substring()**  
 Returns a **portion of the string**.
 
-**1️⃣3️⃣ toString()**  
+**13. toString()**  
 Converts the buffer content into a **String object**.
 
-**1️⃣4️⃣ indexOf()**  
+**14. indexOf()**  
 Returns the **index of first occurrence** of specified substring.
 
-**1️⃣5️⃣ lastIndexOf()**  
+**15. lastIndexOf()**  
 Returns the **index of last occurrence** of specified substring.
 
-**Difference between String , String builder and String buffer**
+#### **Difference between String , String builder and String buffer**
 
-|Feature|String|StringBuilder|StringBuffer|
-|---|---|---|---|
-|Mutability|Immutable|Mutable|Mutable|
-|Thread-safe|Yes|No|Yes|
-|Performance|Slow (for changes)|Fastest|Slower than Builder|
-|Memory usage|More|Less|Less|
-|Synchronization|No|No|Yes|
-|Introduced in|Java 1.0|Java 1.5|Java 1.0|
+| Feature         | String             | StringBuilder | StringBuffer        |
+| --------------- | ------------------ | ------------- | ------------------- |
+| Mutability      | Immutable          | Mutable       | Mutable             |
+| Thread-safe     | Yes                | No            | Yes                 |
+| Performance     | Slow (for changes) | Fastest       | Slower than Builder |
+| Memory usage    | More               | Less          | Less                |
+| Synchronization | No                 | No            | Yes                 |
+| Introduced in   | Java 1.0           | Java 1.5      | Java 1.0            |

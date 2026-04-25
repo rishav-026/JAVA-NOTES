@@ -197,7 +197,7 @@ public class PriorityQueueDemo {
     - **Queue (FIFO)**
     - **Stack (LIFO)**
 - Does **not allow null elements**
-## Deque Methods
+### Deque Methods
 addFirst(E e), addLast(E e), offerFirst(E e), offerLast(E e), removeFirst(), removeLast(), pollFirst(), pollLast(), getFirst(), getLast(), peekFirst(), peekLast(), push(E e), pop(), size(), isEmpty(), clear().
 
 ```java
@@ -237,7 +237,7 @@ public class DequeDemo {
     - Queue
     - Stack
     - Deque
-## ArrayDeque Methods :
+### ArrayDeque Methods :
 add(E e), addFirst(E e), addLast(E e), offer(E e), offerFirst(E e), offerLast(E e), remove(), removeFirst(), removeLast(), poll(), pollFirst(), pollLast(), getFirst(), getLast(), peek(), peekFirst(), peekLast(), push(E e), pop(), size(), isEmpty(), clear().
 
 ```java
@@ -285,7 +285,7 @@ Collection (Interface)
 
 # Types of Set Implementations
 
-## 1️⃣ HashSet
+### 1️⃣ HashSet
 - Stores elements using **hash table**
 - **No duplicates allowed**
 - **No order maintained**
@@ -313,7 +313,7 @@ public class HashSetExample {
 }
 ```
 ---
-## 2️⃣ LinkedHashSet
+### 2️⃣ LinkedHashSet
 - Maintains **insertion order**
 - Uses **hash table + linked list**
 - Slightly slower than HashSet
@@ -341,7 +341,7 @@ public class LinkedHashSetExample {
 ```
 
 ---
-## 3️⃣ TreeSet
+### 3️⃣ TreeSet
 - Stores elements in **sorted order**
 - Uses **Red-Black Tree**
 - Does **not allow null values**
@@ -367,9 +367,9 @@ public class TreeSetExample {
     }
 }
 ```
-# Common Set Methods
+### Common Set Methods
 add(E e), remove(Object o), contains(Object o), size(), isEmpty(), clear(), iterator(), toArray(), addAll(Collection c), removeAll(Collection c), retainAll(Collection c).
-# 4.HashMap
+## 4.HashMap
 **HashMap** is a class in Java that stores data in **key-value pairs**, where each key is unique.
 
 Features:
@@ -378,7 +378,7 @@ Features:
 - Allows **one null key**  
 - Allows **multiple null values**  
 - Does **not maintain order**
-# Common HashMap Methods
+### Common HashMap Methods
 put(K key, V value), get(Object key), remove(Object key), containsKey(Object key), containsValue(Object value), size(), isEmpty(), clear(), keySet(), values(), entrySet(), replace(K key, V value).
 
 ```java
@@ -411,15 +411,14 @@ public class HashMapDemo {
 
 # Traversing HashMap 
 
-## Using keySet()
+#### Using keySet()
 ```java
 for (Integer key : map.keySet()) {  
     System.out.println(key + " " + map.get(key));  
 }
 ```
 ---
-
-## Using entrySet() (Most Efficient)
+#### Using entrySet() (Most Efficient)
 ```java
 for (Map.Entry<Integer, String> entry : map.entrySet()) {  
     System.out.println(entry.getKey() + " " + entry.getValue());  
@@ -433,11 +432,11 @@ for (Map.Entry<Integer, String> entry : map.entrySet()) {
 |Speed|Fastest|Slightly slower|Slowest|
 |Data Structure|Hash Table|Hash Table + List|Red-Black Tree|
 
-# LinkedHashMap 
+## LinkedHashMap 
 **LinkedHashMap** stores data in **key-value pairs** and **maintains insertion order**.
 
 ---
-##  LinkedHashMap Methods
+###  LinkedHashMap Methods
 put(K key, V value), get(Object key), remove(Object key), containsKey(Object key), containsValue(Object value), size(), isEmpty(), clear(), keySet(), values(), entrySet(), replace(K key, V value).
 
 ```java
@@ -467,9 +466,9 @@ public class LinkedHashMapDemo {
 ```
 
 ---
-# TreeMap
+## TreeMap
 **TreeMap** stores key-value pairs in **sorted order of keys**.
-##  TreeMap Methods
+###  TreeMap Methods
 put(K key, V value), get(Object key), remove(Object key), containsKey(Object key), containsValue(Object value), size(), isEmpty(), clear(), firstKey(), lastKey(), keySet(), values(), entrySet(), replace(K key, V value).
 
 ```java
@@ -503,7 +502,7 @@ public class TreeMapDemo {
 **Legacy classes** are the classes that were introduced in **early versions of Java (before Java 1.2)** and later became part of the **Collection Framework**.
 
 They are called **legacy** because they existed **before the modern collection classes** like ArrayList and HashMap.
-#  List of Legacy Classes
+###  List of Legacy Classes
 The main **legacy classes** are:
 Vector  
 Stack  
@@ -512,11 +511,11 @@ Enumeration
 Dictionary  
 Properties  
 BitSet
-# Important Legacy Classes
+### Important Legacy Classes
 
 ### 1.Vector
 **Vector** is a dynamic array that is **synchronized (thread-safe)**.
-### Common Vector Methods 
+#### Common Vector Methods 
 add(), addElement(), get(), set(), remove(), removeElement(), size(), capacity(), firstElement(), lastElement(), clear(), isEmpty().
 
 ```java
@@ -540,7 +539,7 @@ public class VectorDemo {
 ---
 ## 2️. Stack
 **Stack** is a subclass of Vector that follows **LIFO (Last In First Out)**.
-### Stack Methods
+#### Stack Methods
 push(), pop(), peek(), empty(), search().
 
 ```java
@@ -562,7 +561,7 @@ public class StackDemo {
 
 ## 3️. Hashtable
 **Hashtable** stores data in **key-value pairs** and is **synchronized**.
-### Hashtable Methods 
+#### Hashtable Methods 
 put(), get(), remove(), containsKey(), containsValue(), size(), isEmpty(), clear(), keySet(), values(), entrySet().
 
 ```java
@@ -584,9 +583,9 @@ public class HashtableDemo {
 ```
 ---
 
-## 4️. Enumeration (Interface)
+### 4️. Enumeration (Interface)
 **Enumeration** is used to **traverse elements** of legacy classes like Vector and Hashtable.
-### Methods 
+#### Methods 
 hasMoreElements(), nextElement().
 
 ```java
@@ -606,7 +605,7 @@ public class EnumerationDemo {
 ```
 # Difference Between Comparable and Comparator in Java
 ---
-#  Comparable Interface
+###  Comparable Interface
 
 **Comparable** is an interface used to **sort objects in natural order**.  
 It is present in:
@@ -614,7 +613,7 @@ java.lang.Comparable
 You must **override `compareTo()` method**.
 
 ---
-##  Method in Comparable 
+####  Method in Comparable 
 compareTo(Object o)
 
 ```java
@@ -661,7 +660,7 @@ It is present in:
 java.util.Comparator
 You must **override `compare()` method**.
 
-##  Method in Comparator 
+####  Method in Comparator 
 compare(Object o1, Object o2)
 
 ```java
@@ -720,23 +719,22 @@ public class ComparatorDemo {
 It belongs to:
 import java.util.Iterator;
 
-#  Why Iterator is Used
+###  Why Iterator is Used
 - To **traverse elements** of collections
 - Works with **List, Set, Queue**, etc.
 - Safer than loops while removing elements
 - Helps access elements **one by one**
 
-#  Iterator Methods 
+###  Iterator Methods 
 hasNext(), next(), remove().
-#  Iterator Methods Explained
 
-|Method|Description|
-|---|---|
-|`hasNext()`|Returns true if next element exists|
-|`next()`|Returns next element|
-|`remove()`|Removes current element|
+| Method      | Description                         |
+| ----------- | ----------------------------------- |
+| `hasNext()` | Returns true if next element exists |
+| `next()`    | Returns next element                |
+| `remove()`  | Removes current element             |
 
-# Iterator Example (Using ArrayList)
+### Iterator Example (Using ArrayList)
 
 ```java
 import java.util.*;  
