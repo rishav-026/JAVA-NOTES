@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f12db684b403b70c",
+        "id": "712559dd0d170263",
         "type": "tabs",
         "children": [
           {
-            "id": "f0f6c19c776da831",
+            "id": "21df58fabb5c02a9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 331.5
   },
   "right": {
     "id": "e2d5041364bf0770",
@@ -183,19 +183,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "f0f6c19c776da831",
+  "active": "21df58fabb5c02a9",
   "lastOpenFiles": [
-    "JAVA NOTES/Exception handling and Multithreading.md",
+    "JAVA NOTES/Time and Space Complexity.md",
     "JAVA NOTES/Collection Framework.md",
-    "Pasted image 20260423112941.png",
-    "JAVA NOTES/Important Keywords in JAVA.md",
-    "Pasted image 20260423110953.png",
-    "Untitled.md",
-    "JAVA NOTES/OOPS.md",
-    "JAVA NOTES/Loops and Conditions.md",
     "JAVA NOTES/Strings.md",
+    "JAVA NOTES/OOPS.md",
+    "JAVA NOTES/Exception handling and Multithreading.md",
     "JAVA NOTES/Basic Java.md",
     "JAVA NOTES/Arrays.md",
+    "JAVA NOTES/Important Keywords in JAVA.md",
+    "JAVA NOTES/Loops and Conditions.md",
+    "Pasted image 20260423112941.png",
+    "Pasted image 20260423110953.png",
+    "Untitled.md",
     "Welcome.md",
     "JAVA NOTES"
   ]

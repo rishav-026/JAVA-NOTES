@@ -1,4 +1,4 @@
-![image](https://github.com/rishav-026/JAVA-NOTES/blob/main/Pasted%20image%2020260423112941.png)
+![image|60](https://github.com/rishav-026/JAVA-NOTES/blob/main/Pasted%20image%2020260423112941.png)
 
 -The **Java Collection Framework (JCF)** is a set of **classes and interfaces** used to store and manipulate groups of objects efficiently.
 - Operations performed : Insertion , Deletion , Sorting , Searching
@@ -19,7 +19,7 @@ Collection (Interface)
        List (Interface)
         ↓
  ┌──────────────┬──────────────┬──────────────┐
- ArrayList     LinkedList      Vector
+ ArrayList     LinkedList              Vector              
                                       ↓
                                     Stack
 
@@ -89,64 +89,45 @@ public class LinkedListDemo {
         list.add("Python");
         list.add("C++");
         list.add("Java");
-
         System.out.println("After add(): " + list);
-
         list.addFirst("HTML");
         list.addLast("JavaScript");
-
         System.out.println("After addFirst() and addLast(): " + list);
-
         list.add(2, "CSS");
         System.out.println("After add(index, element): " + list);
-
         System.out.println("Element at index 3: " + list.get(3));
-
         System.out.println("First element: " + list.getFirst());
         System.out.println("Last element: " + list.getLast());
-
         list.set(1, "Bootstrap");
         System.out.println("After set(): " + list);
-
         list.remove(2);
         System.out.println("After remove(index): " + list);
-
         list.remove("Java");
         System.out.println("After remove(object): " + list);
-
         list.removeFirst();
         list.removeLast();
-
         System.out.println("After removeFirst() and removeLast(): " + list);
-
         System.out.println("Size of list: " + list.size());
-
         System.out.println("Contains Python? " + list.contains("Python"));
-
         System.out.println("Index of Python: " + list.indexOf("Python"));
-
         System.out.println("Is list empty? " + list.isEmpty());
-
-        System.out.println("\nUsing for loop:");
+       System.out.println("\nUsing for loop:");
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
-
         System.out.println("\nUsing for-each loop:");
         for (String item : list) {
             System.out.println(item);
         }
-
         list.clear();
         System.out.println("\nAfter clear(): " + list);
-
         System.out.println("Is list empty now? " + list.isEmpty());
     }
 }
 ```
 
 ##### - NOTE:  Linked list for frequent insertion and deletion.
-       - Array list for fast access and better memory efficiency.
+        Array list for fast access and better memory efficiency.
 
 # 2.Queue Interface
 **Queue** is a collection that follows the **FIFO (First In First Out)** principle, meaning the element inserted first is removed first.
@@ -155,33 +136,21 @@ add(E e), offer(E e), remove(), poll(), element(), peek(), size(), isEmpty(), co
 
 ```java
 import java.util.*;
-
 public class QueueDemo {
-
     public static void main(String[] args) {
-
         Queue<String> q = new LinkedList<>();
-
         q.add("A");
         q.add("B");
         q.offer("C");
-
         System.out.println("Queue: " + q);
-
         System.out.println("Peek: " + q.peek());
-
         System.out.println("Element: " + q.element());
-
         q.remove();
         System.out.println("After remove(): " + q);
-
         q.poll();
         System.out.println("After poll(): " + q);
-
         System.out.println("Size: " + q.size());
-
         System.out.println("Is Empty: " + q.isEmpty());
-
         q.clear();
         System.out.println("After clear(): " + q);
     }
@@ -196,36 +165,23 @@ add(E e), offer(E e), remove(), poll(), element(), peek(), size(), isEmpty(), co
 
 ```java
 import java.util.*;
-
 public class PriorityQueueDemo {
-
     public static void main(String[] args) {
-
         PriorityQueue<Integer> pq = new PriorityQueue<>();
-
         pq.add(30);
         pq.add(10);
         pq.offer(20);
         pq.add(5);
-
         System.out.println("PriorityQueue: " + pq);
-
         System.out.println("Peek: " + pq.peek());
-
         System.out.println("Element: " + pq.element());
-
         pq.remove();
         System.out.println("After remove(): " + pq);
-
         pq.poll();
         System.out.println("After poll(): " + pq);
-
         System.out.println("Size: " + pq.size());
-
         System.out.println("Contains 20: " + pq.contains(20));
-
         System.out.println("Is Empty: " + pq.isEmpty());
-
         pq.clear();
         System.out.println("After clear(): " + pq);
     }
@@ -241,51 +197,36 @@ public class PriorityQueueDemo {
     - **Queue (FIFO)**
     - **Stack (LIFO)**
 - Does **not allow null elements**
-
 ## Deque Methods
 addFirst(E e), addLast(E e), offerFirst(E e), offerLast(E e), removeFirst(), removeLast(), pollFirst(), pollLast(), getFirst(), getLast(), peekFirst(), peekLast(), push(E e), pop(), size(), isEmpty(), clear().
 
 ```java
 import java.util.*;
-
 public class DequeDemo {
-
     public static void main(String[] args) {
-
         Deque<Integer> dq = new LinkedList<>();
-
         dq.addFirst(10);
         dq.addLast(20);
         dq.offerFirst(5);
         dq.offerLast(25);
-
         System.out.println("Deque: " + dq);
-
         System.out.println("First Element: " + dq.getFirst());
         System.out.println("Last Element: " + dq.getLast());
-
         dq.removeFirst();
         dq.removeLast();
-
         System.out.println("After removeFirst & removeLast: " + dq);
-
         dq.push(50);
         System.out.println("After push: " + dq);
-
         dq.pop();
         System.out.println("After pop: " + dq);
-
         System.out.println("Peek First: " + dq.peekFirst());
         System.out.println("Peek Last: " + dq.peekLast());
-
         System.out.println("Size: " + dq.size());
-
         dq.clear();
         System.out.println("After clear: " + dq);
     }
 }
 ```
-
 # c. ArrayDeque Class
 
 **ArrayDeque** is a class that implements the **Deque interface** using a **resizable array**.
@@ -301,38 +242,25 @@ add(E e), addFirst(E e), addLast(E e), offer(E e), offerFirst(E e), offerLast(E 
 
 ```java
 import java.util.*;
-
 public class ArrayDequeDemo {
-
     public static void main(String[] args) {
-
         ArrayDeque<String> dq = new ArrayDeque<>();
-
         dq.add("A");
         dq.addFirst("B");
         dq.addLast("C");
         dq.offer("D");
-
         System.out.println("ArrayDeque: " + dq);
-
         System.out.println("First Element: " + dq.getFirst());
         System.out.println("Last Element: " + dq.getLast());
-
         dq.removeFirst();
         dq.removeLast();
-
         System.out.println("After removeFirst & removeLast: " + dq);
-
         dq.push("X");
         System.out.println("After push: " + dq);
-
         dq.pop();
         System.out.println("After pop: " + dq);
-
         System.out.println("Peek: " + dq.peek());
-
         System.out.println("Size: " + dq.size());
-
         dq.clear();
         System.out.println("After clear: " + dq);
     }
@@ -352,7 +280,7 @@ Collection (Interface)
         ↓
         Set (Interface)
         ↓
- ┌──────────────┬──────────────┬──────────────┐
+ ┌──────────────┬──────────────┬
  HashSet     LinkedHashSet      TreeSet
 
 # Types of Set Implementations
@@ -366,32 +294,20 @@ Collection (Interface)
 
 ```java
 import java.util.*;
-
 public class HashSetExample {
-
     public static void main(String[] args) {
-
         HashSet<String> set = new HashSet<>();
-
         set.add("Java");
         set.add("Python");
         set.add("C++");
         set.add("Java");
-
         System.out.println("HashSet: " + set);
-
         System.out.println("Contains Python: " + set.contains("Python"));
-
         set.remove("C++");
-
         System.out.println("After remove: " + set);
-
         System.out.println("Size: " + set.size());
-
         System.out.println("Is Empty: " + set.isEmpty());
-
         set.clear();
-
         System.out.println("After clear: " + set);
     }
 }
@@ -406,30 +322,19 @@ public class HashSetExample {
 import java.util.*;
 
 public class LinkedHashSetExample {
-
     public static void main(String[] args) {
-
         LinkedHashSet<String> set = new LinkedHashSet<>();
-
         set.add("Java");
         set.add("Python");
         set.add("C++");
         set.add("Java");
-
         System.out.println("LinkedHashSet: " + set);
-
         System.out.println("Contains Python: " + set.contains("Python"));
-
         set.remove("C++");
-
         System.out.println("After remove: " + set);
-
         System.out.println("Size: " + set.size());
-
         System.out.println("Is Empty: " + set.isEmpty());
-
         set.clear();
-
         System.out.println("After clear: " + set);
     }
 }
@@ -443,42 +348,27 @@ public class LinkedHashSetExample {
 - Slower than HashSet
 ```java
 import java.util.*;
-
 public class TreeSetExample {
-
     public static void main(String[] args) {
-
         TreeSet<Integer> set = new TreeSet<>();
-
         set.add(30);
         set.add(10);
         set.add(20);
         set.add(10);
-
         System.out.println("TreeSet: " + set);
-
         System.out.println("First Element: " + set.first());
-
         System.out.println("Last Element: " + set.last());
-
         set.remove(20);
-
         System.out.println("After remove: " + set);
-
         System.out.println("Size: " + set.size());
-
         System.out.println("Is Empty: " + set.isEmpty());
-
         set.clear();
-
         System.out.println("After clear: " + set);
     }
 }
 ```
 # Common Set Methods
 add(E e), remove(Object o), contains(Object o), size(), isEmpty(), clear(), iterator(), toArray(), addAll(Collection c), removeAll(Collection c), retainAll(Collection c).
-
-
 # 4.HashMap
 **HashMap** is a class in Java that stores data in **key-value pairs**, where each key is unique.
 
@@ -493,42 +383,26 @@ put(K key, V value), get(Object key), remove(Object key), containsKey(Object key
 
 ```java
 import java.util.*;
-
 public class HashMapDemo {
-
     public static void main(String[] args) {
-
         HashMap<Integer, String> map = new HashMap<>();
-
         map.put(1, "Java");
         map.put(2, "Python");
         map.put(3, "C++");
         map.put(4, "JavaScript");
-
         System.out.println("HashMap: " + map);
-
         System.out.println("Value for key 2: " + map.get(2));
-
         System.out.println("Contains key 3: " + map.containsKey(3));
-
         System.out.println("Contains value Python: " + map.containsValue("Python"));
-
         map.remove(3);
         System.out.println("After remove key 3: " + map);
-
         System.out.println("Size: " + map.size());
-
         System.out.println("Keys: " + map.keySet());
-
         System.out.println("Values: " + map.values());
-
         System.out.println("Entries: " + map.entrySet());
-
         map.replace(2, "HTML");
         System.out.println("After replace: " + map);
-
         System.out.println("Is Empty: " + map.isEmpty());
-
         map.clear();
         System.out.println("After clear: " + map);
     }
@@ -568,38 +442,24 @@ put(K key, V value), get(Object key), remove(Object key), containsKey(Object key
 
 ```java
 import java.util.*;  
-  
 public class LinkedHashMapDemo {  
-  
     public static void main(String[] args) {  
-  
         LinkedHashMap<Integer, String> map = new LinkedHashMap<>();  
-  
         map.put(1, "Java");  
         map.put(2, "Python");  
         map.put(3, "C++");  
         map.put(4, "HTML");  
-  
         System.out.println("LinkedHashMap: " + map);  
-  
         System.out.println("Value for key 2: " + map.get(2));  
-  
         System.out.println("Contains key 3: " + map.containsKey(3));  
-  
         map.remove(3);  
         System.out.println("After remove: " + map);  
-  
         System.out.println("Keys: " + map.keySet());  
-  
         System.out.println("Values: " + map.values());  
-  
         map.replace(2, "CSS");  
         System.out.println("After replace: " + map);  
-  
         System.out.println("Size: " + map.size());  
-  
         System.out.println("Is Empty: " + map.isEmpty());  
-  
         map.clear();  
         System.out.println("After clear: " + map);  
     }  
@@ -614,40 +474,25 @@ put(K key, V value), get(Object key), remove(Object key), containsKey(Object key
 
 ```java
 import java.util.*;  
-  
-public class TreeMapDemo {  
-  
+public class TreeMapDemo {   
     public static void main(String[] args) {  
-  
-        TreeMap<Integer, String> map = new TreeMap<>();  
-  
+        TreeMap<Integer, String> map = new TreeMap<>();   
         map.put(3, "Java");  
         map.put(1, "Python");  
         map.put(4, "C++");  
         map.put(2, "HTML");  
-  
         System.out.println("TreeMap: " + map);  
-  
         System.out.println("Value for key 2: " + map.get(2));  
-  
         System.out.println("First Key: " + map.firstKey());  
-  
         System.out.println("Last Key: " + map.lastKey());  
-  
         map.remove(3);  
         System.out.println("After remove: " + map);  
-  
         System.out.println("Keys: " + map.keySet());  
-  
         System.out.println("Values: " + map.values());  
-  
         map.replace(2, "CSS");  
         System.out.println("After replace: " + map);  
-  
         System.out.println("Size: " + map.size());  
-  
-        System.out.println("Is Empty: " + map.isEmpty());  
-  
+        System.out.println("Is Empty: " + map.isEmpty()); 
         map.clear();  
         System.out.println("After clear: " + map);  
     }  
@@ -667,45 +512,32 @@ Enumeration
 Dictionary  
 Properties  
 BitSet
-
 # Important Legacy Classes
 
 ### 1.Vector
-
 **Vector** is a dynamic array that is **synchronized (thread-safe)**.
 ### Common Vector Methods 
 add(), addElement(), get(), set(), remove(), removeElement(), size(), capacity(), firstElement(), lastElement(), clear(), isEmpty().
 
 ```java
 import java.util.*;  
-  
 public class VectorDemo {  
-  
     public static void main(String[] args) {  
-  
         Vector<String> v = new Vector<>();  
-  
         v.add("Java");  
         v.add("Python");  
         v.add("C++");  
-  
         System.out.println("Vector: " + v);  
-  
         System.out.println("First Element: " + v.firstElement());  
-  
         System.out.println("Last Element: " + v.lastElement());  
-  
         v.remove("Python");  
-  
         System.out.println("After remove: " + v);  
-  
         System.out.println("Size: " + v.size());  
     }  
 }
 
 ```
 ---
-
 ## 2️. Stack
 **Stack** is a subclass of Vector that follows **LIFO (Last In First Out)**.
 ### Stack Methods
@@ -713,25 +545,16 @@ push(), pop(), peek(), empty(), search().
 
 ```java
 import java.util.*;  
-  
 public class StackDemo {  
-  
-    public static void main(String[] args) {  
-  
+    public static void main(String[] args) {    
         Stack<Integer> s = new Stack<>();  
-  
         s.push(10);  
         s.push(20);  
         s.push(30);  
-  
         System.out.println("Stack: " + s);  
-  
         System.out.println("Top Element: " + s.peek());  
-  
         s.pop();  
-  
         System.out.println("After pop: " + s);  
-  
         System.out.println("Is Empty: " + s.empty());  
     }  
 }
@@ -739,31 +562,21 @@ public class StackDemo {
 
 ## 3️. Hashtable
 **Hashtable** stores data in **key-value pairs** and is **synchronized**.
-
 ### Hashtable Methods 
 put(), get(), remove(), containsKey(), containsValue(), size(), isEmpty(), clear(), keySet(), values(), entrySet().
 
 ```java
 import java.util.*;  
-  
 public class HashtableDemo {  
-  
-    public static void main(String[] args) {  
-  
+    public static void main(String[] args) {    
         Hashtable<Integer, String> ht = new Hashtable<>();  
-  
         ht.put(1, "Java");  
         ht.put(2, "Python");  
         ht.put(3, "C++");  
-  
         System.out.println("Hashtable: " + ht);  
-  
         System.out.println("Value for key 2: " + ht.get(2));  
-  
         ht.remove(3);  
-  
         System.out.println("After remove: " + ht);  
-  
         System.out.println("Size: " + ht.size());  
     }  
 }
@@ -773,36 +586,26 @@ public class HashtableDemo {
 
 ## 4️. Enumeration (Interface)
 **Enumeration** is used to **traverse elements** of legacy classes like Vector and Hashtable.
-
 ### Methods 
 hasMoreElements(), nextElement().
 
 ```java
 import java.util.*;  
-  
 public class EnumerationDemo {  
-  
     public static void main(String[] args) {  
-  
-        Vector<String> v = new Vector<>();  
-  
+        Vector<String> v = new vector<>();  
         v.add("Java");  
         v.add("Python");  
         v.add("C++");  
-  
         Enumeration<String> e = v.elements();  
-  
         while (e.hasMoreElements()) {  
             System.out.println(e.nextElement());  
         }  
     }  
 }
 ```
-
 # Difference Between Comparable and Comparator in Java
-
 ---
-
 #  Comparable Interface
 
 **Comparable** is an interface used to **sort objects in natural order**.  
@@ -852,7 +655,6 @@ public class ComparableDemo {
 ```
 
 ---
-
 # Comparator Interface
 **Comparator** is an interface used to **sort objects in different ways (custom order)**.
 It is present in:
