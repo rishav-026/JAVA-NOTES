@@ -607,112 +607,202 @@ public class EnumerationDemo {
 ---
 ###  Comparable Interface
 
-**Comparable** is an interface used to **sort objects in natural order**.  
-It is present in:
-java.lang.Comparable
-You must **override `compareTo()` method**.
-
----
+- **Comparable** is an interface used to **sort objects in natural order**.  
+- It is present in:   java.lang.Comparable
+- You must **override `compareTo()` method**.
 ####  Method in Comparable 
 compareTo(Object o)
 
 ```java
 import java.util.*;  
-  
 class Student implements Comparable<Student> {  
-  
     int id;  
     String name;  
-  
     Student(int id, String name) {  
         this.id = id;  
         this.name = name;  
     }  
-  
     public int compareTo(Student s) {  
-        return this.id - s.id;  
-    }  
+        /*if (this.id < s.id)
+    return -1;
+
+else if (this.id > s.id)
+    return 1;
+
+else
+    return 0;
+    }  */
+    return this.id - s.id;
 }  
-  
-public class ComparableDemo {  
-  
+public class ComparableDemo {   
     public static void main(String[] args) {  
-  
         ArrayList<Student> list = new ArrayList<>();  
-  
         list.add(new Student(3, "Java"));  
         list.add(new Student(1, "Python"));  
         list.add(new Student(2, "C++"));  
-  
         Collections.sort(list);  
-  
         for (Student s : list) {  
             System.out.println(s.id + " " + s.name);  
         }  
     }  
 }
 ```
-
 ---
 # Comparator Interface
-**Comparator** is an interface used to **sort objects in different ways (custom order)**.
-It is present in:
-java.util.Comparator
-You must **override `compare()` method**.
-
+- **Comparator** is an interface used to **sort objects in different ways (custom order)**.
+- It is present in:   java.util.Comparator
+- You must **override `compare()` method**.
 ####  Method in Comparator 
 compare(Object o1, Object o2)
+```java
+import java.util.*;  
+class Student {  
+    int id;  
+    String name;  
+    Student(int id, String name) {  
+        this.id = id;  
+        this.name = name;  
+    }  
+}  
+class SortByName implements Comparator<Student> {  
+    public int compare(Student s1, Student s2) {  
+        //return s1.name.compareTo(s2.name); 
+        if (s1.name comes before s2.name)  
+           return -1;  
+        else if (s1.name comes after s2.name)  
+           return 1;  
+        else  
+           return 0; 
+    }  
+}  
+public class ComparatorDemo {  
+    public static void main(String[] args) {  
+        ArrayList<Student> list = new ArrayList<>();  
+        list.add(new Student(3, "Java"));  
+        list.add(new Student(1, "Python"));  
+        list.add(new Student(2, "C++"));  
+        Collections.sort(list, new SortByName());  
+        for (Student s : list) {  
+            System.out.println(s.id + " " + s.name);  
+        }  
+    }  
+}
+```
+I can create multiple comparator which is not possible with comparable.
+```java
+class SortById implements Comparator<Student> { }
 
+class SortByName implements Comparator<Student> { }
+
+class SortByMarks implements Comparator<Student> { }
+```
+
+Question:  cond -> sort in dec order of marks.  
+                // if marks is same then sort in increasing order of rollNo. 
 ```java
 import java.util.*;  
   
 class Student {  
-  
-    int id;  
+    int rollNo;  
     String name;  
+    int marks;  
   
-    Student(int id, String name) {  
-        this.id = id;  
+    Student(int rollNo, String name, int marks) {  
+        this.rollNo = rollNo;  
         this.name = name;  
+        this.marks = marks;  
     }  
 }  
-  
-class SortByName implements Comparator<Student> {  
-  
-    public int compare(Student s1, Student s2) {  
-        return s1.name.compareTo(s2.name);  
-    }  
-}  
-  
-public class ComparatorDemo {  
-  
+public class ComparatorTrickDemo {  
     public static void main(String[] args) {  
-  
-        ArrayList<Student> list = new ArrayList<>();  
-  
-        list.add(new Student(3, "Java"));  
-        list.add(new Student(1, "Python"));  
-        list.add(new Student(2, "C++"));  
-  
-        Collections.sort(list, new SortByName());  
-  
+        List<Student> list = new ArrayList<>();  
+        list.add(new Student(3, "Amit",50));  
+        list.add(new Student(1, "Ravi",70));  
+        list.add(new Student(2, "Neha",80));  
+        list.add(new Student(4, "Priya",80));  
+        //(first, second)  
+        // dec -> second - first        //inc -> first - second        
+        // Using Comparator with Anonymous Class        
+        Collections.sort(list, new Comparator<Student>(){  
+            @Override  
+            public int compare(Student s1, Student s2){  
+                if(s1.marks == s2.marks){
+                    return s1.rollNo - s2.rollNo;  
+                }  
+               return s2.marks - s1.marks;  
+            }  
+        });  
         for (Student s : list) {  
-            System.out.println(s.id + " " + s.name);  
+            System.out.println(s.marks + " " + s.name);  
         }  
     }  
 }
 ```
 
-| Feature            | Comparable           | Comparator                |
-| ------------------ | -------------------- | ------------------------- |
-| Package            | java.lang            | java.util                 |
-| Method             | compareTo()          | compare()                 |
-| Sorting Type       | Natural sorting      | Custom sorting            |
-| Number of Sortings | One sorting possible | Multiple sorting possible |
-| Class Modification | Required             | Not required              |
-| Interface Location | Inside class         | Separate class            |
+| Feature            | Comparable           | Comparator                |     |
+| ------------------ | -------------------- | ------------------------- | --- |
+| Package            | java.lang            | java.util                 |     |
+| Method             | compareTo()          | compare()                 |     |
+| Sorting Type       | Natural sorting      | Custom sorting            |     |
+| Number of Sortings | One sorting possible | Multiple sorting possible |     |
+| Class Modification | Required             | Not required              |     |
+| Interface Location | Inside class         | Separate class            |     |
 
 **NOTE** : Comparable is used to sort objects in natural order using compareTo() method, while Comparator is used to sort objects in custom order using compare() method.
+
+# What is a Lambda Function in Java?
+A **Lambda function** is a **short way to write anonymous functions** (functions without a name).
+
+Instead of writing:
+```java
+class SortByName implements Comparator<Student> {  
+    public int compare(Student s1, Student s2) {  
+        return s1.name.compareTo(s2.name);  
+    }  
+}
+```
+You can write it **in one line** using a lambda.
+
+Syntax:
+```java
+(parameters) -> expression
+(a, b) -> a - b  //Take a and b → return a - b
+```
+Example:
+```java
+import java.util.*;
+class Student {
+    int id;
+    String name;
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+public class LambdaDemo {
+    public static void main(String[] args) {
+        ArrayList<Student> list = new ArrayList<>();
+        list.add(new Student(3, "Java"));
+        list.add(new Student(1, "Python"));
+        list.add(new Student(2, "C++"));
+        // Lambda sorting by name
+        Collections.sort(list,
+            (s1, s2) -> s1.name.compareTo(s2.name));
+        for (Student s : list) {
+            System.out.println(s.id + " " + s.name);
+        }
+    }
+}
+```
+Multiple Fields: Sort by id then name 
+```java
+list.sort((s1, s2) -> {
+    if (s1.id != s2.id)
+        return s1.id - s2.id;
+    return s1.name.compareTo(s2.name);
+});
+```
+
 
 # Iterator in Java
 **Iterator** is an interface used to **traverse (iterate) elements** of a collection one by one.
