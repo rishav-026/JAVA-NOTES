@@ -323,7 +323,6 @@ function App() {
 export default App;
 ```
 ### Using Ternary 
- 
 Syntax:
 ```js
 condition ? truePart : falsePart
@@ -357,4 +356,46 @@ function App() {
 }  
 export default App;
 ```
+
+# Event Handling in React 
+**Event Handling** in React means **responding to user actions** like:
+- Clicking buttons
+- Typing in input fields
+- Submitting forms
+- Hovering mouse
+**Event handling is the process of handling user actions like clicks, inputs, and submissions in React.**
+###  Why We Use Event Handling
+We use events to:
+ - Handle button clicks  
+ - Get user input  
+ - Submit forms  
+ - Show messages  
+ - Update UI
+Example:
+```js
+<button onClick={handleClick}>  
+  Click Me  
+</button>
+```
+#  onClick Event 
+Used when user clicks a button.
+## Example — Button Click
+
+```js
+import React from "react";  
+function App() {  
+  const handleClick = () => {  
+    alert("Button Clicked!");  
+  };  
+  return (  
+    <>  
+      <button onClick={handleClick}>  
+        Click Me  
+      </button>  
+    </>  
+  );  
+}  
+export default App;
+```
+
 
