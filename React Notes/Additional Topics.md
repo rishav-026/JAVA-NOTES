@@ -1,5 +1,6 @@
 
-Conditional Rendering , Event handling , form handling , Two -way Binding , Props drilling , 
+Conditional Rendering , Event handling , form handling , Two -way Binding , Props drilling , Context API, Axios , Folder structure Organization.
+React Router DOM
 # What is Conditional Rendering?
 - Conditional Rendering means showing or hiding UI elements based on conditions.
 - Just like if-else in JavaScript, React can render different UI depending on conditions.
@@ -203,17 +204,82 @@ Props drilling can cause:
 -  Difficult to debug  
 -  Unnecessary props in middle components
 #### Solution to Props Drilling :  Context API
+## Context API
+It is used to **share data globally** between components **without passing props manually at every level**.
+##### Why We Use Context API
+We use it to:
+ - Avoid props drilling  
+ - Share global data  
+ - Manage state across components  
+ - Improve code readability
 
+###  Steps to Use Context API
 
+##### 1️. Create Context
+```js
+import { createContext } from "react";
+export const UserContext = createContext();
+```
+##### 2️. Provide Context
+Wrap components with **Provider**
 
-
-
-
-
-
-
-
-
+```js
+import { UserContext } from "./UserContext";
+function App() {
+  const user = "Rishav"; 
+   return ( 
+    <UserContext.Provider value={user}>     
+       <Child />  
+    </UserContext.Provider>  );}
+```
+##### 3️. Consume Context
+Use `useContext`
+```js
+import { useContext } from "react";
+import { UserContext } from "./UserContext";
+function Child() {
+  const user = useContext(UserContext);
+  return <h1>{user}</h1>;
+}
+```
+##### Flow :
+```
+createContext → Provider → useContext
+```
+#### Example
+```js
+import React, { createContext, useContext } from "react";
+const UserContext = createContext();
+function App() {
+  const user = "Rishav";
+  return (
+    <UserContext.Provider value={user}>
+      <Parent />
+    </UserContext.Provider>
+  );
+}
+function Parent() {
+  return <Child />;
+}
+function Child() {
+  const user = useContext(UserContext);
+  return <h1>{user}</h1>;
+}
+export default App;
+```
+####  Passing Multiple Values
+```js
+<UserContext.Provider value={{ name: "Rishav", age: 22 }}>
+```
+Access:
+```js
+const { name, age } = useContext(UserContext);
+```
+#### When to Use Context API
+ - User authentication  
+ - Theme (dark/light)  
+ - Language settings  
+ - Global data
 # Axios in React
 - **Axios** is a **JavaScript library** used to **make HTTP requests** (API calls).
 - **Axios is used to fetch or send data from/to a server.
@@ -280,4 +346,139 @@ Data stored in state
 UI re-renders
    ↓
 Images displayed
+```
+
+# React Router DOM
+- **React Router DOM** is a library used to **add navigation (routing) in React applications**.
+- It allows you to create **multiple pages without reloading the browser**.
+- **React Router DOM is used to navigate between different components (pages) in a React app without page reload.**
+####  Why We Use It
+ - We use it to:
+ - Create multiple pages  
+ - Navigate without reload  
+ - Build Single Page Applications (SPA)  
+ - Handle URLs
+#####  Install React Router
+```
+npm install react-router-dom
+```
+####  Core Components:
+|Component|Use|
+|---|---|
+|`BrowserRouter`|Wraps entire app|
+|`Routes`|Holds all routes|
+|`Route`|Defines a path|
+|`Link`|Navigation without reload|
+|`useNavigate`|Navigate using code|
+#### Basic Example
+##### Step 1 — Import
+
+```js
+import {  BrowserRouter,  Routes,  Route,  Link} from "react-router-dom";
+```
+##### Step 2 — Create Pages
+
+```js
+function Home() { 
+ return <h1>Home Page</h1>;
+ }
+ function About() {
+   return <h1>About Page</h1>;
+}
+```
+##### Step 3 — Setup Router
+
+```js
+function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+```
+How It Works: 
+```
+URL changes → React Router → loads component → no page reload
+```
+# React Project Structure + Folder Organization
+####  Why Project Structure Matters
+
+Without structure:
+❌ Messy code  
+❌ Hard to scale  
+❌ Difficult to debug
+
+With good structure:
+
+✔ Clean code  
+✔ Easy to maintain  
+✔ Scalable apps  
+✔ Team-friendly
+**Project structure is the organized way of arranging files and folders in a React app.**
+####  Basic React Project Structure
+```js
+my-app/
+│
+├── node_modules/
+├── public/
+├── src/
+│   ├── App.js
+│   ├── index.js
+│
+├── package.json
+└── package-lock.json
+```
+#####  Recommended Folder Structure (Best Practice)
+```
+src/
+│
+├── components/
+├── pages/
+├── hooks/
+├── context/
+├── services/
+├── assets/
+├── styles/
+├── utils/
+│
+├── App.js
+└── main.jsx / index.js
+```
+####  Folder Explanation
+###### 📁 components/ : Reusable UI parts
+```
+Button.jsx ,Navbar.jsx , Card.jsx
+```
+Small, reusable pieces
+###### 📁 pages/ : Full pages (used with routing)
+```
+Home.jsx , About.jsx , Contact.jsx
+```
+ Used with React Router
+###### 📁 hooks/ : Custom hooks
+```
+useFetch.js,  useAuth.js
+```
+ Reusable logic
+###### 📁 context/: Global state (Context API)
+```
+AuthContext.js , ThemeContext.js
+```
+ Avoid props drilling
+###### 📁 services/ : API calls (Axios)
+```
+api.js , userService.js
+```
+ Keep API logic separate
+###### 📁 utils/ : Helper functions
+```
+formatDate.js , helpers.js
 ```
