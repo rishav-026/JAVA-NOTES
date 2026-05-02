@@ -296,106 +296,135 @@ Use cleanup when working with:
  - Event listeners  
  - Subscriptions  
  - WebSockets
-# What is Conditional Rendering?
 
-- Conditional Rendering means showing or hiding UI elements based on conditions.
-- Just like if-else in JavaScript, React can render different UI depending on conditions.
-- Conditional rendering is used to display different UI elements based on conditions.
-###  Why We Use Conditional Rendering
-We use it to:
- Show/Hide components  
- Display login/logout buttons  
- Show loading messages  
-Display error messages  
- Toggle content
----
-#   Using `if-else`
+
+# useRef Hook in React
+**useRef** is a React Hook used to:
+- **Access DOM elements directly**  
+ - **Store values without re-rendering the component**
+
+**useRef creates a reference that persists across renders without causing re-render.**
+ #### Syntax
+```
+const refName = useRef(initialValue);
+```
+### 2 Main Uses of useRef
+
+### 1️. Access DOM Elements
+#### Example — Focus Input
 ```js
-import React, { useState } from "react";  
-function App() {  
-  const [isLoggedIn, setIsLoggedIn] = useState(true);  
-  if (isLoggedIn) {  
-    return <h1>Welcome User</h1>;  
-  } else {  
-    return <h1>Please Login</h1>;  
-  }  
-}  
+import React, { useRef } from "react";
+function App() {
+  const inputRef = useRef(null);
+  const handleFocus = () => {
+    inputRef.current.focus();
+  };
+  return (
+    <>
+      <input ref={inputRef} type="text" />
+      <button onClick={handleFocus}>
+        Focus Input
+      </button>
+    </>
+  );
+}
 export default App;
 ```
-### Using Ternary 
-Syntax:
-```js
-condition ? truePart : falsePart
+#####  How It Works:
 ```
-Example:
+ref={inputRef}
+```
+- React connects input to ref
+```
+inputRef.current
+```
+- Gives access to actual DOM element
+###  2️ Store Values Without Re-render
+##### Example:
 ```js
-import React, { useState } from "react";  
-function App() {  
-  const [isLoggedIn, setIsLoggedIn] = useState(false);  
-  return (  
-    <>  
-      <h1>  
-        {isLoggedIn ? "Welcome User" : "Please Login"}  
-      </h1>  
-    </>  
-  );  
-}  
+import React, { useState, useRef } from "react";
+function App() {
+  const [count, setCount] = useState(0);
+  const prevCount = useRef(0);
+  const increase = () => {
+    prevCount.current = count;
+    setCount(count + 1);
+  };
+  return (
+    <>
+      <h1>Current: {count}</h1>
+      <h2>Previous: {prevCount.current}</h2>
+      <button onClick={increase}>
+        Increase
+      </button>
+    </>
+  );
+}
 export default App;
 ```
-### Using Logical AND (`&&`)
-Used when showing something **only if condition is true**.
-```js
-import React, { useState } from "react";  
-function App() {  
-  const [show, setShow] = useState(true);  
-  return (  
-    <>  
-      {show && <h1>Hello User</h1>}  
-    </>  
-  );  
-}  
-export default App;
+##### Common Use Cases:
+ - Input focus  
+ - Access DOM elements  
+ - Store previous values  
+ - Timer IDs  
+ - Avoid re-render
+# React Router DOM
+- **React Router DOM** is a library used to **add navigation (routing) in React applications**.
+- It allows you to create **multiple pages without reloading the browser**.
+- **React Router DOM is used to navigate between different components (pages) in a React app without page reload.**
+####  Why We Use It
+ - We use it to:
+ - Create multiple pages  
+ - Navigate without reload  
+ - Build Single Page Applications (SPA)  
+ - Handle URLs
+#####  Install React Router
 ```
-
-# Event Handling in React 
-**Event Handling** in React means **responding to user actions** like:
-- Clicking buttons
-- Typing in input fields
-- Submitting forms
-- Hovering mouse
-**Event handling is the process of handling user actions like clicks, inputs, and submissions in React.**
-###  Why We Use Event Handling
-We use events to:
- - Handle button clicks  
- - Get user input  
- - Submit forms  
- - Show messages  
- - Update UI
-Example:
-```js
-<button onClick={handleClick}>  
-  Click Me  
-</button>
+npm install react-router-dom
 ```
-#  onClick Event 
-Used when user clicks a button.
-## Example — Button Click
+####  Core Components:
+|Component|Use|
+|---|---|
+|`BrowserRouter`|Wraps entire app|
+|`Routes`|Holds all routes|
+|`Route`|Defines a path|
+|`Link`|Navigation without reload|
+|`useNavigate`|Navigate using code|
+#### Basic Example
+##### Step 1 — Import
 
 ```js
-import React from "react";  
-function App() {  
-  const handleClick = () => {  
-    alert("Button Clicked!");  
-  };  
-  return (  
-    <>  
-      <button onClick={handleClick}>  
-        Click Me  
-      </button>  
-    </>  
-  );  
-}  
-export default App;
+import {  BrowserRouter,  Routes,  Route,  Link} from "react-router-dom";
 ```
+##### Step 2 — Create Pages
 
+```js
+function Home() { 
+ return <h1>Home Page</h1>;
+ }
+ function About() {
+   return <h1>About Page</h1>;
+}
+```
+##### Step 3 — Setup Router
 
+```js
+function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+```
+How It Works:
+```
+URL changes → React Router → loads component → no page reload
+```
