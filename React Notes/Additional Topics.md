@@ -7,11 +7,11 @@ React Router DOM
 - Conditional rendering is used to display different UI elements based on conditions.
 ###  Why We Use Conditional Rendering
 We use it to:
- Show/Hide components  
- Display login/logout buttons  
- Show loading messages  
-Display error messages  
- Toggle content
+ - Show/Hide components  
+ - Display login/logout buttons  
+ - Show loading messages  
+ - Display error messages  
+ - Toggle content
 ---
 #   Using `if-else`
 ```js
