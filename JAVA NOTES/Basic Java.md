@@ -141,11 +141,11 @@ System.out.println(a == b); // false
 ### 3️. Logical Operators
 Used to **combine conditions**.
 
-|Operator|Meaning|
-|---|---|
-|`&&`|Logical AND|
-|`||
-|`!`|Logical NOT|
+| Operator | Meaning     |
+| -------- | ----------- |
+| `&&`     | Logical AND |
+|   \|\|   | Logical OR  |
+| `!`      | Logical NOT |
 
 ### Example:
 ```java
