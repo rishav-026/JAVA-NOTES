@@ -144,7 +144,7 @@ Used to **combine conditions**.
 |Operator|Meaning|
 |---|---|
 |`&&`|Logical AND|
-|`||
+|`||`|Logical OR|
 |`!`|Logical NOT|
 
 ### Example:
