@@ -61,12 +61,12 @@ System.out.println("The sum is: " + sum);
 
 # Types of Arrays in Java
 
-1️⃣ Single Dimensional Array  
-2️⃣ Multidimensional Array
+1️ Single Dimensional Array  
+2️ Multidimensional Array
 
 ---
 
-### 1️⃣ Single Dimensional Array
+### 1️ Single Dimensional Array
 
 Stores elements in **one row**.
 **Syntax:**
@@ -74,7 +74,7 @@ Stores elements in **one row**.
 int[] arr = new int[5];
 ```
 
-### 2️⃣ Multidimensional Array
+### 2️ Multidimensional Array
 
 Stores elements in **rows and columns**.
 **Syntax:**

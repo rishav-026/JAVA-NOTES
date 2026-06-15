@@ -1,4 +1,4 @@
-SUPER , THIS , CONSTRUCTOR , FINAL , STATIC , Garbage Collection ,Dynamic method dispatch , Object classes ,var keyword , Wrapper class ,  Call by value and Call by Reference , Inner Class and Packages.
+SUPER , THIS , CONSTRUCTOR , FINAL , STATIC , Garbage Collection ,Dynamic method dispatch , Object classes ,var keyword , Wrapper class ,  Call by value and Call by Reference , Inner Class , Static Inner Class  and Packages.
 
 ### Super Keyword:
 The **`super` keyword** is used to **refer to the refer to the parent class** of a subclass.
@@ -9,7 +9,7 @@ The **`super` keyword** is used to **refer to the refer to the parent class** 
 There are **3 main uses**:
 1️. To **access parent class variable**  
 2️. To **call parent class method**  
-3️. To **call parent class constructor
+3️. To call parent class constructor
 
 ```java
 //Access Parent Class Variable
@@ -97,7 +97,7 @@ Example:
 class Test {
     final int x = 10;
     void show() {
-        // x = 20; ❌ Error (cannot change value)
+        // x = 20; // Error (cannot change value)
         System.out.println(x);
     }
 }
@@ -111,7 +111,7 @@ class Animal {
     }
 }
 class Dog extends Animal {
-    // void sound() { } ❌ Error (cannot override final method)
+    // void sound() { } // Error (cannot override final method)
 }
 ```
 3️. **final Class**:A **final class** **cannot be inherited** by another class.
@@ -124,19 +124,64 @@ final class A {
     }
 }
 
-// class B extends A { } ❌ Error (cannot inherit final class)
+// class B extends A { }  //Error (cannot inherit final class)
 ```
 
-**`final` keyword** is used to **restrict modification**:
-- **final variable** → Value cannot change
-- **final method** → Cannot override
-- **final class** → Cannot inherit
+`final` keyword is used to restrict modification:
+- final variable → Value cannot change
+- final method → Cannot override
+- final class → Cannot inherit
 
 # `static` Keyword in Java 
 
 The **`static` keyword** is used to **create variables and methods that belong to the class rather than objects**.
 `static` means **class-level member shared by all objects**.
+###  Without `static` (each object has its own copy)
+```java
+class Student {
+    String college = "ABC College"; // non-static
+}
 
+public class Test {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student();
+
+        s1.college = "XYZ College"; // change for s1 only
+
+        System.out.println(s1.college); // XYZ College
+        System.out.println(s2.college); // ABC College
+    }
+}
+```
+
+-> Here, each student object has its **own copy** of `college`. Changing one does not affect the other.
+
+###  With `static` (shared by all objects)
+
+```java
+class Student {
+    static String college = "ABC College"; // static
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student();
+
+        s1.college = "XYZ College"; // change using s1
+
+        System.out.println(s1.college); // XYZ College
+        System.out.println(s2.college); // XYZ College
+    }
+}
+```
+
+-> Here, `college` is **shared** by all students. Changing it once affects **all objects**.
+
+##### In short:
+- **Non‑static → each object gets its own copy (separate data).**
+- **Static → one common copy shared by all objects (class-level data).**
 #### Uses of `static` Keyword
 There are **3 main uses**:
 1️. **Static Variable**  : A **static variable** is **shared among all objects** of the class.
@@ -184,7 +229,7 @@ It helps:
 Garbage Collection is the automatic process of removing unused objects from heap memory to free space.
 Garbage Collection works in Heap Memory only.
 
-Garbage : An object becomes **garbage** when it is **no longer referenced** by any variable.
+Garbage : An object becomes garbage when it is no longer referenced by any variable.
 Example:
 ```java
 class Main {
@@ -195,14 +240,14 @@ class Main {
 }
 ```
 #### Steps of how garbage collection works :
-Object is created in **heap**  
-Object is **no longer used**  
-JVM detects unused object  
-Garbage Collector removes it  
-Memory becomes free
+- Object is created in **heap**  
+- Object is **no longer used**  
+- JVM detects unused object  
+- Garbage Collector removes it  
+- Memory becomes free
 
 ### Constructor in java:
-- A **constructor in Java** is a special method used to **initialize objects** when they are created.
+- A **constructor in Java** is a special method used to initialize objects when they are created.
 - Constructors do not return any type while methods  have the return type or void if it doesn't return any value.
 - If a class does not have constructor , the java compiler automatically create a default constructor during run-time.
 - A constructor cannot be abstract  or static or final.
@@ -531,32 +576,21 @@ Collections cannot store primitives directly.
 
 ### Call by Value vs Call by Reference in Java
 
-This is a **very important interview concept**, but Java behaves in a slightly tricky way.
-
----
 ####  1. Call by Value (Java’s actual behavior)
  #### Java is **always Call by Value**.
-
 This means:
 - A **copy of the value** is passed to the method
 - Changes inside the method **do not affect original variable**
-
----
-##### 🔹 Example (Primitive Types)
+#####  Example (Primitive Types)
 
 ```java
-public class Main {
-
+public class Main { 
     static void change(int x) {
         x = 100;
     }
-
     public static void main(String[] args) {
-
         int a = 10;
-
         change(a);
-
         System.out.println(a);//10 because only a copy of 'a' is passes
     }
 }
@@ -564,44 +598,31 @@ public class Main {
 
 ---
 ###  2. What about Objects?
-
-Java still uses **Call by Value**, but for objects it passes:
- **copy of reference (address)**
-
----
-#### 🔹 Example (Objects)
-
+Java still uses **Call by Value**, but for objects it passes: copy of reference (address)
+####  Example (Objects)
 ```java
 class Student {  
     String name;  
 }  
-  
 public class Main {  
-  
     static void change(Student s) {  
         s.name = "Harry";  
     }  
-  
     public static void main(String[] args) {  
-  
         Student s1 = new Student();  
         s1.name = "Ron";  
-  
         change(s1);  
-  
         System.out.println(s1.name);  //Harry
     }  
 }
 ```
 
 Note: Call by Reference is not in java .
-
-
 ## Java Inner Classes
 
 In Java, it is also possible to nest classes (a class within a class). The purpose of nested classes is to group classes that belong together, which makes your code more readable and maintainable.
 
-To access the inner class, create an object of the outer class, and then create an object of the inner class:
+->To access the inner class, create an object of the outer class, and then create an object of the inner class:
 Example:
 ```java
 class OuterClass {
@@ -620,9 +641,7 @@ public class Main {
   }
 }
 ```
-
 ## Static Inner Class
-
 An inner class can also be `static`, which means that you can access it without creating an object of the outer class:
 ### Example
 ```java
@@ -640,21 +659,18 @@ public class Main {
   }
 }
 ```
-
 # Java Packages
-A **package** in Java is a **namespace** used to group related classes and interfaces together.
-Think of it as **a folder in a file directory**. We use packages to avoid name conflicts, and to write a better maintainable code. Packages are divided into two categories:
+->A **package** in Java is a **namespace** used to group related classes and interfaces together.
+->Think of it as **a folder in a file directory**. We use packages to avoid name conflicts, and to write       a better maintainable code. Packages are divided into two categories:
 - Built-in Packages (packages from the Java API)
 - User-defined Packages (create your own packages)
-
 #### 1. Built-in Packages (Java API)
 Java provides many ready-made packages:
 - `java.lang` → core classes (String, Math, etc.)
 - `java.util` → utilities (ArrayList, Scanner, etc.)
 - `java.io` → input/output classes
   ```java
-  import java.util.Scanner;
-
+import java.util.Scanner;
 public class Test {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

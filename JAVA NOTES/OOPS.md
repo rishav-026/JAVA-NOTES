@@ -1,4 +1,4 @@
-OOP stands for **Object-Oriented Programming**.
+# OOP stands for **Object-Oriented Programming**.
 
 Procedural programming is about writing procedures or methods that perform operations on the data, while object-oriented programming is about creating objects that contain both data and methods.
 
@@ -15,10 +15,13 @@ Procedural programming is about writing procedures or methods that perform opera
 
 There are **4 types of access modifiers**:
 
-1️. public  :Members declared as **public** can be **accessed from anywhere** in the program.
-2️. private  : Members declared as **private** can be **accessed only within the same class**.
-3️. protected  :Members declared as **protected** can be **accessed within the same package and in subclasses of other packages**.
-4️. default (no keyword):When no access modifier is specified, it is called **default access modifier**, and members are accessible **only within the same package**.
+1️. **public**  :Members declared as public can be accessed from anywhere in the program.
+
+2️. **private**  : Members declared as private can be accessed only within the same class.
+
+3️. **protected**  :Members declared as protected can be accessed within the same package and in subclasses of other packages.
+
+4️. **default** (no keyword):When no access modifier is specified, it is called default access modifier, and members are accessible only within the same package.
 
 | Modifier  | Same Class | Same Package | Subclass | Different Package |
 | --------- | ---------- | ------------ | -------- | ----------------- |
@@ -26,7 +29,6 @@ There are **4 types of access modifiers**:
 | protected | ✅          | ✅            | ✅        | ❌                 |
 | default   | ✅          | ✅            | ❌        | ❌                 |
 | private   | ✅          | ❌            | ❌        | ❌                 |
-
 
 # Methods (Functions) in Java 
 A **method** is a **block of code** that performs a **specific task** and runs when it is called.
@@ -242,6 +244,7 @@ class Circle extends Shape {
 - Improves maintainability
 - Supports **method overriding**
 - extends keyword is used
+
 Syntax:
 ```java
 class Parent {

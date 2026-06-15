@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JAVA NOTES/Basic Java.md",
+                "file": "JAVA NOTES/Important Keywords in JAVA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Basic Java"
+              "title": "Important Keywords in JAVA"
             }
           }
         ],
@@ -200,17 +200,18 @@
   },
   "active": "675bdbbaad74583a",
   "lastOpenFiles": [
+    "JAVA NOTES/Collection Framework.md",
+    "JAVA NOTES/Arrays.md",
+    "JAVA NOTES/Basic Java.md",
+    "JAVA NOTES/Strings.md",
+    "JAVA NOTES/OOPS.md",
     "React Notes/Additional Topics.md",
     "React Notes/Flow of Html and css.canvas",
     "AWS/List of Services.md",
     "Untitled.md",
     "JAVA NOTES/Exception handling and Multithreading.md",
     "AWS",
-    "JAVA NOTES/OOPS.md",
     "JAVA NOTES/Important Keywords in JAVA.md",
-    "JAVA NOTES/Collection Framework.md",
-    "JAVA NOTES/Basic Java.md",
-    "JAVA NOTES/Strings.md",
     "FSD LAB PROGRAMS/LAB PROGRAMS.md",
     "FSD LAB PROGRAMS",
     "React Notes/HOOKS.md",
@@ -219,7 +220,6 @@
     "JAVA NOTES/Time and Space Complexity.md",
     "React Notes",
     "JAVA NOTES/Loops and Conditions.md",
-    "JAVA NOTES/Arrays.md",
     "Pasted image 20260423112941.png",
     "Welcome.md",
     "JAVA NOTES"

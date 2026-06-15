@@ -8,6 +8,18 @@ It is used for:
 - Web servers and application servers
 - Database connection
 - And much, much more!
+### Q1. Why is Java a platform independent language?
+
+Java is called a **platform-independent language** because of its **WORA principle (Write Once, Run Anywhere)**.
+Java is platform independent since its compiled **bytecode** can run on any operating system through the **Java Virtual Machine (JVM)**, enabling programs to be written once and executed anywhere without modification.
+### Q2. Why is Java not a pure object oriented language?
+
+Java is **object-oriented but not purely object-oriented** because:
+- It has **primitive data types** (int, char, etc.) that are not objects.
+- It allows **static methods/variables** that can be used without objects.
+- Program execution starts with a **static** `main()` **method**, not an object.
+- It permits **null references**, meaning a variable may point to no object.
+👉 So, Java mixes OOP with practical features for efficiency, which makes it powerful but not “pure” OOP.
 
 ## Working of Java Program:
 Source code --Compiled by Javac-->>Byte Code --Interpreted by JVM-->> Machine Code
