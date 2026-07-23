@@ -411,8 +411,7 @@ class DemoThreadMethod {
 
 ### (iv) `join()`
 
-- It is used to pause the execution of the current thread  
-    until the thread on which `join()` is called has finished execution.
+-The join() method in Java is used with threads to make one thread wait for another thread to finish before continuing.
 ##### Example:
 ```java
 class MyThread extends Thread {  
