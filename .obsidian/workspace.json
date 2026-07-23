@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JAVA NOTES/Time and Space Complexity.md",
+                "file": "JAVA NOTES/01_Basic Java.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Time and Space Complexity"
+              "title": "01_Basic Java"
             }
           }
         ],
@@ -200,25 +200,25 @@
   },
   "active": "675bdbbaad74583a",
   "lastOpenFiles": [
-    "JAVA NOTES/Strings.md",
-    "JAVA NOTES/OOPS.md",
-    "JAVA NOTES/Loops and Conditions.md",
-    "JAVA NOTES/Important Keywords in JAVA.md",
-    "JAVA NOTES/Exception handling and Multithreading.md",
-    "JAVA NOTES/Collection Framework.md",
-    "JAVA NOTES/Arrays.md",
-    "JAVA NOTES/Basic Java.md",
+    "Untitled.md",
+    "JAVA NOTES/01_Basic Java.md",
+    "JAVA NOTES/09_Time and Space Complexity.md",
+    "JAVA NOTES/03_Strings.md",
+    "JAVA NOTES/05_OOPS.md",
+    "JAVA NOTES/02_Loops and Conditions.md",
+    "JAVA NOTES/06_Important Keywords in JAVA.md",
+    "JAVA NOTES/07_Exception handling and Multithreading.md",
+    "JAVA NOTES/08_Collection Framework.md",
+    "JAVA NOTES/04_Arrays.md",
     "React Notes/Additional Topics.md",
     "React Notes/Flow of Html and css.canvas",
     "AWS/List of Services.md",
-    "Untitled.md",
     "AWS",
     "FSD LAB PROGRAMS/LAB PROGRAMS.md",
     "FSD LAB PROGRAMS",
     "React Notes/HOOKS.md",
     "React Notes/Basic React.md",
     "Pasted image 20260423110953.png",
-    "JAVA NOTES/Time and Space Complexity.md",
     "React Notes",
     "Pasted image 20260423112941.png",
     "Welcome.md",
