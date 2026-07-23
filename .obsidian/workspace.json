@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JAVA NOTES/Important Keywords in JAVA.md",
+                "file": "JAVA NOTES/Exception handling and Multithreading.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Important Keywords in JAVA"
+              "title": "Exception handling and Multithreading"
             }
           }
         ],
@@ -200,6 +200,7 @@
   },
   "active": "675bdbbaad74583a",
   "lastOpenFiles": [
+    "JAVA NOTES/Important Keywords in JAVA.md",
     "JAVA NOTES/Collection Framework.md",
     "JAVA NOTES/Arrays.md",
     "JAVA NOTES/Basic Java.md",
@@ -211,7 +212,6 @@
     "Untitled.md",
     "JAVA NOTES/Exception handling and Multithreading.md",
     "AWS",
-    "JAVA NOTES/Important Keywords in JAVA.md",
     "FSD LAB PROGRAMS/LAB PROGRAMS.md",
     "FSD LAB PROGRAMS",
     "React Notes/HOOKS.md",
