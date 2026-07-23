@@ -522,7 +522,7 @@ But sometimes we need objects (for Collections, Generics, etc.), so wrapper clas
 |long|Long|
 
 ---
-##### 🔹 Example
+#####  Example
 ```java
 public class Main {  
     public static void main(String[] args) {  
@@ -537,14 +537,14 @@ public class Main {
 ---
 ###  Types of Conversion
 
-#### 1️⃣ Autoboxing (Primitive → Object)
+#### 1️ Autoboxing (Primitive → Object)
 Java automatically converts primitive to wrapper object.
 ```java
 int a = 5;  
 Integer obj = a;  // autoboxing
 ```
 ---
-#### 2️⃣ Unboxing (Object → Primitive)
+#### 2️ Unboxing (Object → Primitive)
 Wrapper object → primitive value.
 
 ```java
@@ -553,7 +553,7 @@ int a = obj;  // unboxing
 ```
 
 ---
-##### 🔹 Example (Both Together)
+#####  Example (Both Together)
 ```java
 public class Main {  
     public static void main(String[] args) {  

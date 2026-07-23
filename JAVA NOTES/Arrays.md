@@ -105,7 +105,7 @@ Multidimensional Array
 
 A **multidimensional array** is an array of arrays used to represent **table or matrix form of data**.
 
-### 🔹 Creation of Multidimensional Array
+###  Creation of Multidimensional Array
 
 **Syntax:**
 ```java

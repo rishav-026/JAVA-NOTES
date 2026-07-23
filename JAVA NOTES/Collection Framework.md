@@ -285,7 +285,7 @@ Collection (Interface)
 
 # Types of Set Implementations
 
-### 1️⃣ HashSet
+### 1️ HashSet
 - Stores elements using **hash table**
 - **No duplicates allowed**
 - **No order maintained**
@@ -313,7 +313,7 @@ public class HashSetExample {
 }
 ```
 ---
-### 2️⃣ LinkedHashSet
+### 2️ LinkedHashSet
 - Maintains **insertion order**
 - Uses **hash table + linked list**
 - Slightly slower than HashSet
@@ -341,7 +341,7 @@ public class LinkedHashSetExample {
 ```
 
 ---
-### 3️⃣ TreeSet
+### 3️ TreeSet
 - Stores elements in **sorted order**
 - Uses **Red-Black Tree**
 - Does **not allow null values**
@@ -537,7 +537,7 @@ public class VectorDemo {
 
 ```
 ---
-## 2️. Stack
+### 2️. Stack
 **Stack** is a subclass of Vector that follows **LIFO (Last In First Out)**.
 #### Stack Methods
 push(), pop(), peek(), empty(), search().
@@ -559,7 +559,7 @@ public class StackDemo {
 }
 ```
 
-## 3️. Hashtable
+### 3️. Hashtable
 **Hashtable** stores data in **key-value pairs** and is **synchronized**.
 #### Hashtable Methods 
 put(), get(), remove(), containsKey(), containsValue(), size(), isEmpty(), clear(), keySet(), values(), entrySet().

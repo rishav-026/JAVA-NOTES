@@ -199,7 +199,7 @@ Abstraction is the **process of hiding implementation details and showing only e
 Achieved using **abstract classes** and **interfaces**.
 
 ---
-# 🔹 Other Supporting Concepts in OOPs
+#  Other Supporting Concepts in OOPs
 
 Besides the four pillars, these are also important:
 
@@ -328,8 +328,8 @@ class Cat extends Animal {
 
 ##### 4️. **Multiple Inheritance**  
 **Multiple inheritance** is when **one class inherits properties from more than one parent class**.
-❌ **Not supported using classes in Java**  
-✔ Supported using **interfaces**
+ - Not supported using classes in Java
+ - Supported using **interfaces**
 
 Example:
 ```java
@@ -351,7 +351,7 @@ class C implements A, B {
 
 ##### 5️. **Hybrid Inheritance**  
 **Hybrid inheritance** is a **combination of two or more types of inheritance** (like hierarchical + multiple).  
-✔ Supported using **interfaces
+ - Supported using **interfaces
 Example:
 ```java
 interface A {
@@ -370,7 +370,7 @@ class C implements A, B {
 }
 ```
 ### Interface in Java
-An **interface** is a **blueprint of a class** that contains **abstract methods** (methods without body).
+An interface is a blueprint of a class that contains abstract methods(methods without body).
 Syntax:
 ```java
 interface InterfaceName {

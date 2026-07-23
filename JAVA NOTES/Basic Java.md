@@ -19,7 +19,7 @@ Java is **object-oriented but not purely object-oriented** because:
 - It allows **static methods/variables** that can be used without objects.
 - Program execution starts with a **static** `main()` **method**, not an object.
 - It permits **null references**, meaning a variable may point to no object.
-👉 So, Java mixes OOP with practical features for efficiency, which makes it powerful but not “pure” OOP.
+->  So, Java mixes OOP with practical features for efficiency, which makes it powerful but not “pure” OOP.
 
 ## Working of Java Program:
 Source code --Compiled by Javac-->>Byte Code --Interpreted by JVM-->> Machine Code
@@ -150,31 +150,16 @@ System.out.println(a == b); // false
 ```
 
 ---
-### 3️. Logical Operators
-Used to **combine conditions**.
+## 3.Logical Opearors
+The Three Main Logical Operators
 
-<<<<<<< HEAD
-| Operator | Meaning     |
-| -------- | ----------- |
-| `&&`     | Logical AND |
-|   \|\|   | Logical OR  |
-| `!`      | Logical NOT |
-=======
-|Operator|Meaning|
-|---|---|
-|`&&`|Logical AND|
-|`||`|Logical OR|
-|`!`|Logical NOT|
->>>>>>> 4b87cb9fc71d89bc319dca774c16702b4d510d0f
+|Operator|Name|Description|Example|
+|---|---|---|---|
+|`&&`|**Logical AND**|Returns `true` only if **both** conditions are true.|`(5 > 3 && 8 < 10)` → `true`|
+|`\|`|**Logical OR**|Returns `true` if **at least one** condition is true.|`(5 > 3 \| 2 > 10)` → `true`|
+|`!`|**Logical NOT**|**Inverts** the boolean value (unary operator).|`!(5 > 3)` → `false`|
 
-### Example:
-```java
-int a = 10;  
-System.out.println(a > 5 && a < 20); // true  
-System.out.println(!(a > 5)); // false
-```
 
----
 ### 4️. Assignment Operators
 Used to **assign values** to variables.
 

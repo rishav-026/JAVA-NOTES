@@ -117,7 +117,7 @@ switch(day) {
  **break** is used to stop execution.
 
 ---
-# 🔹 Looping Statements in Java
+#  Looping Statements in Java
 
 ## What are Loops?
 **Loops** are used to **repeat a block of code multiple times**.
@@ -181,7 +181,7 @@ while(i <= 5);
 ```
 
 ---
-# 🔹 Loop Control Statements
+#  Loop Control Statements
 
 Used to control loop execution.
 
@@ -230,7 +230,7 @@ The **for-each loop** (also called **enhanced for loop**) is used to **traverse 
 It is **simpler than a normal for loop** and mainly used when you want to **read elements one by one**.
 
 ---
-### 🔹 Syntax of For-Each Loop
+####  Syntax of For-Each Loop
 
 ```java
 for(dataType variable : arrayName) {  
